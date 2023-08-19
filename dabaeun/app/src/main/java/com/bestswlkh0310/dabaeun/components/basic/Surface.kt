@@ -19,7 +19,7 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.semantics.semantics
 import com.bestswlkh0310.dabaeun.components.modifier.dbClickable
-import com.bestswlkh0310.dabaeun.components.theme.SgxTheme
+import com.bestswlkh0310.dabaeun.components.theme.DbTheme
 
 
 @Composable
@@ -27,7 +27,7 @@ fun Surface(
     onClick: (() -> Unit)?,
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    color: Color = SgxTheme.color.White,
+    color: Color = DbTheme.color.White,
     contentColor: Color = contentColorFor(color),
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
     content: @Composable () -> Unit,
@@ -68,7 +68,7 @@ fun Modifier.overlayBlackBackground(alpha: Float): Modifier = this.then(
 fun Surface(
     modifier: Modifier = Modifier,
     shape: Shape = RectangleShape,
-    color: Color = SgxTheme.color.White,
+    color: Color = DbTheme.color.White,
     contentColor: Color = contentColorFor(color),
     content: @Composable () -> Unit
 ) {
