@@ -2,7 +2,7 @@ package com.bestswlkh0310.dabaeun.components.utlis
 
 import androidx.compose.ui.unit.dp
 
-object SgxDimen {
+object dbDimen {
 
     val ScreenSidePadding = 16.dp
 
