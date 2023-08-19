@@ -18,7 +18,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.semantics.semantics
-import com.bestswlkh0310.dabaeun.components.modifier.sgxClickable
+import com.bestswlkh0310.dabaeun.components.modifier.dbClickable
 import com.bestswlkh0310.dabaeun.components.theme.SgxTheme
 
 
@@ -48,7 +48,7 @@ fun Surface(
                     backgroundColor = color,
                 )
                 .overlayBlackBackground(alpha = overlayBlack)
-                .sgxClickable(
+                .dbClickable(
                     onClick = onClick,
                     interactionSource = interactionSource
                 ),

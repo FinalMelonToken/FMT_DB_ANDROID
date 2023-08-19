@@ -5,10 +5,10 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.ReadOnlyComposable
 
 @Composable
-fun SgxTheme(
-    color: SgxColor = SgxTheme.color,
-    typography: SgxTypography = SgxTheme.typography,
-    shape: SgxShape = SgxTheme.shape,
+fun DbTheme(
+    color: DbColor = DbTheme.color,
+    typography: DbTypography = DbTheme.typography,
+    shape: DbShape = DbTheme.shape,
     content: @Composable () -> Unit
 ) {
     CompositionLocalProvider(
@@ -19,18 +19,18 @@ fun SgxTheme(
     )
 }
 
-object SgxTheme {
-    val color: SgxColor
+object DbTheme {
+    val color: DbColor
         @Composable
         @ReadOnlyComposable
         get() = LocalColor.current
 
-    val typography: SgxTypography
+    val typography: DbTypography
         @Composable
         @ReadOnlyComposable
         get() = LocalTypography.current
 
-    val shape: SgxShape
+    val shape: DbShape
         @Composable
         @ReadOnlyComposable
         get() = LocalShape.current

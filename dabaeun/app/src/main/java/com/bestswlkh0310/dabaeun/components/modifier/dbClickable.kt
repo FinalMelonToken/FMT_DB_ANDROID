@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.composed
 import androidx.compose.ui.graphics.Color
 
-fun Modifier.sgxClickable(
+fun Modifier.dbClickable(
     interactionSource: MutableInteractionSource = MutableInteractionSource(),
     rippleColor: Color = Color.Unspecified,
     rippleEnable: Boolean = false,

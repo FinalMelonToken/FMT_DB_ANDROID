@@ -14,18 +14,18 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.text.style.TextAlign
-import com.bestswlkh0310.dabaeun.components.theme.SgxTheme
-import com.bestswlkh0310.dabaeun.components.theme.SgxTheme.shape
+import com.bestswlkh0310.dabaeun.components.theme.DbTheme
+import com.bestswlkh0310.dabaeun.components.theme.DbTheme.shape
 import com.bestswlkh0310.dabaeun.components.theme.Title2
 
 @Composable
-fun SgxRoundedButton(
+fun DbRoundedButton(
     text: String,
-    textColor: Color = SgxTheme.color.White,
+    textColor: Color = DbTheme.color.White,
     modifier: Modifier = Modifier,
     iconLeft: @Composable (() -> Unit)? = null,
     iconRight: @Composable (() -> Unit)? = null,
-    shape: Shape = SgxTheme.shape.medium,
+    shape: Shape = DbTheme.shape.medium,
     type: ButtonType = ButtonType.Primary,
     enable: Boolean = true,
     isMaxWidth: Boolean = false,
@@ -62,7 +62,7 @@ fun SgxRoundedButton(
 }
 
 @Composable
-fun SgxSmallRoundedButton(
+fun DbSmallRoundedButton(
     text: String,
     modifier: Modifier = Modifier,
     iconLeft: @Composable (() -> Unit)? = null,
@@ -71,7 +71,7 @@ fun SgxSmallRoundedButton(
     enable: Boolean = true,
     onClick: () -> Unit,
 ) {
-    SgxRoundedButton(
+    DbRoundedButton(
         text = text,
         modifier = modifier,
         iconLeft = iconLeft,
@@ -85,7 +85,7 @@ fun SgxSmallRoundedButton(
 }
 
 @Composable
-fun SgxMediumRoundedButton(
+fun DbMediumRoundedButton(
     text: String,
     modifier: Modifier = Modifier,
     iconLeft: @Composable (() -> Unit)? = null,
@@ -94,7 +94,7 @@ fun SgxMediumRoundedButton(
     enable: Boolean = true,
     onClick: () -> Unit,
 ) {
-    SgxRoundedButton(
+    DbRoundedButton(
         text = text,
         modifier = modifier,
         iconLeft = iconLeft,
@@ -107,7 +107,7 @@ fun SgxMediumRoundedButton(
 }
 
 @Composable
-fun SgxLargeRoundedButton(
+fun DbLargeRoundedButton(
     text: String,
     modifier: Modifier = Modifier,
     iconLeft: @Composable (() -> Unit)? = null,
@@ -116,7 +116,7 @@ fun SgxLargeRoundedButton(
     enable: Boolean = true,
     onClick: () -> Unit,
 ) {
-    SgxRoundedButton(
+    DbRoundedButton(
         text = text,
         modifier = modifier,
         iconLeft = iconLeft,
@@ -129,15 +129,15 @@ fun SgxLargeRoundedButton(
 }
 
 @Composable
-fun SgxMaxWidthButton(
+fun DbMaxWidthButton(
     text: String,
     modifier: Modifier = Modifier,
-    shape: Shape = SgxTheme.shape.medium,
+    shape: Shape = DbTheme.shape.medium,
     type: ButtonType = ButtonType.Primary,
     enable: Boolean = true,
     onClick: () -> Unit,
 ) {
-    SgxRoundedButton(
+    DbRoundedButton(
         text = text,
         modifier = modifier,
         shape = shape,
@@ -149,7 +149,7 @@ fun SgxMaxWidthButton(
 }
 
 @Composable
-fun SgxGrayButton(
+fun DbGrayButton(
     text: String,
     modifier: Modifier = Modifier,
     iconLeft: @Composable (() -> Unit)? = null,
@@ -158,9 +158,9 @@ fun SgxGrayButton(
     enable: Boolean = true,
     onClick: () -> Unit,
 ) {
-    SgxRoundedButton(
+    DbRoundedButton(
         text = text,
-        textColor = SgxTheme.color.Gray500,
+        textColor = DbTheme.color.Gray500,
         modifier = modifier,
         iconLeft = iconLeft,
         iconRight = iconRight,

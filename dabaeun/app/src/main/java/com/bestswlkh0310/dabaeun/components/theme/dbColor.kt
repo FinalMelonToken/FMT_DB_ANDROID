@@ -6,7 +6,7 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.takeOrElse
 
-object SgxColor {
+object DbColor {
 
     val White = Color(0xFFFFFFFF)
     val Black = Color(0xFF000000)
@@ -45,9 +45,9 @@ object SgxColor {
 
 @Composable
 fun contentColorFor(backgroundColor: Color) =
-    SgxColor.contentColorFor(backgroundColor).takeOrElse { LocalContentColor.current }
+    DbColor.contentColorFor(backgroundColor).takeOrElse { LocalContentColor.current }
 
-private fun SgxColor.contentColorFor(backgroundColor: Color): Color {
+private fun DbColor.contentColorFor(backgroundColor: Color): Color {
     return when (backgroundColor) {
         MainColor -> White
         Error -> White
@@ -58,6 +58,6 @@ private fun SgxColor.contentColorFor(backgroundColor: Color): Color {
     }
 }
 
-internal val LocalColor = staticCompositionLocalOf { SgxColor }
+internal val LocalColor = staticCompositionLocalOf { DbColor }
 internal val LocalContentColor = compositionLocalOf { Color.Black }
 internal val LocalContentAlpha = compositionLocalOf { 1f }

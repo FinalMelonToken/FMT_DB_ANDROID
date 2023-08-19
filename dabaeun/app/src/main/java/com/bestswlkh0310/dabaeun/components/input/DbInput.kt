@@ -39,7 +39,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bestswlkh0310.dabaeun.components.theme.LocalContentColor
 import com.bestswlkh0310.dabaeun.components.theme.Label2
-import com.bestswlkh0310.dabaeun.components.theme.SgxTheme
+import com.bestswlkh0310.dabaeun.components.theme.DbTheme
 
 sealed interface InputType {
     object Default : InputType
@@ -53,18 +53,18 @@ sealed interface InputType {
 }
 
 @Composable
-fun SgxInput(
+fun DbInput(
     value: String,
     hint: String,
     modifier: Modifier = Modifier,
     isError: Boolean = false,
     errorMessage: String = "",
     enabled: Boolean = true,
-    textColor: Color = SgxTheme.color.Gray500,
+    textColor: Color = DbTheme.color.Gray500,
     singleLine: Boolean = true,
     maxLines: Int = 1,
-    textStyle: TextStyle = SgxTheme.typography.title1,
-    focusColor: Color = SgxTheme.color.MainColor400,
+    textStyle: TextStyle = DbTheme.typography.title1,
+    focusColor: Color = DbTheme.color.MainColor400,
     readOnly: Boolean = false,
     trailingIcon: @Composable (() -> Unit)? = null,
     visualTransformation: VisualTransformation = VisualTransformation.None,
@@ -86,7 +86,7 @@ fun SgxInput(
             onValueChange = onValueChange,
             modifier = modifier
                 .background(
-                    color = SgxTheme.color.Transparent,
+                    color = DbTheme.color.Transparent,
                     shape = RectangleShape
                 )
                 .focusRequester(focusRequester)
@@ -139,7 +139,7 @@ private fun InputDecoration(
     trailingIcon: @Composable (() -> Unit)? = null,
 ) {
     val r = getInputColor(focusColor, inputType)
-    val inputColor = if (r == focusColor) focusColor else SgxTheme.color.Gray200
+    val inputColor = if (r == focusColor) focusColor else DbTheme.color.Gray200
 
     val hintOffsetAnimation: Dp by animateDpAsState(
         if (inputType == InputType.Default || inputType == InputType.Error.Default)
@@ -156,7 +156,7 @@ private fun InputDecoration(
             14f, label = ""
     )
 
-    val dividerColor = SgxTheme.color.Gray50
+    val dividerColor = DbTheme.color.Gray50
 
     Box(
         modifier = Modifier
@@ -182,7 +182,7 @@ private fun InputDecoration(
                 Text(
                     text = hint,
                     color = inputColor,
-                    style = SgxTheme.typography.title1.copy(
+                    style = DbTheme.typography.title1.copy(
                         fontSize = hintFontSize.sp,
                         lineHeight = (hintFontSize + 10f).sp,
                         fontWeight = FontWeight.Medium
@@ -233,10 +233,10 @@ private fun focusStateAsInputType(
 @Composable
 private fun getInputColor(focusColor: Color, inputType: InputType): Color =
     when (inputType) {
-        InputType.Default -> SgxTheme.color.Gray500
-        InputType.UnFocus -> SgxTheme.color.Gray500
+        InputType.Default -> DbTheme.color.Gray500
+        InputType.UnFocus -> DbTheme.color.Gray500
         InputType.Focus -> focusColor
-        InputType.Error.Default -> SgxTheme.color.Error
-        InputType.Error.Focus -> SgxTheme.color.Error
-        InputType.Error.UnFocus -> SgxTheme.color.Error
+        InputType.Error.Default -> DbTheme.color.Error
+        InputType.Error.Focus -> DbTheme.color.Error
+        InputType.Error.UnFocus -> DbTheme.color.Error
     }

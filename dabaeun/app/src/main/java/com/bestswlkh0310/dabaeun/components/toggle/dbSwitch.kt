@@ -1,4 +1,4 @@
-package com.bestswlkh0310.sgx_components.component.basic.toggle
+package com.bestswlkh0310.dabaeun.components.toggle
 
 import android.widget.Toast
 import androidx.compose.animation.animateColorAsState
@@ -26,19 +26,19 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.bestswlkh0310.sgx_components.modifier.sgxClickable
-import com.bestswlkh0310.dabaeun.components.theme.SgxTheme
-import com.bestswlkh0310.sgx_components.utlis.animateAlignmentAsState
+import com.bestswlkh0310.dabaeun.components.modifier.dbClickable
+import com.bestswlkh0310.dabaeun.components.theme.DbTheme
+import com.bestswlkh0310.dabaeun.components.utlis.animateAlignmentAsState
 
 @Composable
-fun SgxSwitch(
+fun dbSwitch(
     modifier: Modifier = Modifier,
     boxHeight: Dp = 26.dp,
     isActive: Boolean = false,
-    shape: Shape = SgxTheme.shape.large,
-    activeColor: Color = SgxTheme.color.MainColor400,
-    inactiveColor: Color = SgxTheme.color.Gray100,
-    dotColor: Color = SgxTheme.color.White,
+    shape: Shape = DbTheme.shape.large,
+    activeColor: Color = DbTheme.color.MainColor400,
+    inactiveColor: Color = DbTheme.color.Gray100,
+    dotColor: Color = DbTheme.color.White,
     rippleColor: Color = Color.Unspecified,
     rippleEnable: Boolean = false,
     bounded: Boolean = true,
@@ -50,12 +50,12 @@ fun SgxSwitch(
 
     val backgroundColor by animateColorAsState(
         if (isActived) activeColor
-        else inactiveColor
+        else inactiveColor, label = ""
     )
 
     val dotSize by animateDpAsState(
         if (isActived) boxHeight - 4.dp
-        else boxHeight - 12.dp
+        else boxHeight - 12.dp, label = ""
     )
 
     Box(
@@ -63,7 +63,7 @@ fun SgxSwitch(
             .height(boxHeight)
             .aspectRatio(22f / 13f)
             .background(color = backgroundColor, shape = shape)
-            .sgxClickable(/*rippleColor, rippleEnable, bounded*/) {
+            .dbClickable {
                 isActived = !isActived
                 onActiveChangedListener?.let {
                     it(isActived)
@@ -80,30 +80,15 @@ fun SgxSwitch(
     }
 }
 
-/**
- * Dodam Selectable Toggle Switch
- *
- * @param modifier Modifier
- * @param boxHeight box height
- * @param isLeft state of switch / true(left) and false(right)
- * @param shape shape of switch / recommend use large shape..
- * @param rightColor color of false state, switch background
- * @param leftColor color of true state, switch background
- * @param dotColor color of dot
- * @param rippleColor
- * @param rippleEnable
- * @param bounded
- * @param onSelectChangedListener when isLeft state is change
- */
 @Composable
-fun SgxSelectSwitch(
+fun dbSelectSwitch(
     modifier: Modifier = Modifier,
     boxHeight: Dp = 26.dp,
     isLeft: Boolean = true,
-    shape: Shape = SgxTheme.shape.large,
-    rightColor: Color = SgxTheme.color.MainColor400,
-    leftColor: Color = SgxTheme.color.MainColor400,
-    dotColor: Color = SgxTheme.color.White,
+    shape: Shape = DbTheme.shape.large,
+    rightColor: Color = DbTheme.color.MainColor400,
+    leftColor: Color = DbTheme.color.MainColor400,
+    dotColor: Color = DbTheme.color.White,
     rippleColor: Color = Color.Unspecified,
     rippleEnable: Boolean = false,
     bounded: Boolean = true,
@@ -115,7 +100,7 @@ fun SgxSelectSwitch(
 
     val backgroundColor by animateColorAsState(
         if (isLeft) leftColor
-        else rightColor
+        else rightColor, label = ""
     )
 
     Box(
@@ -123,7 +108,7 @@ fun SgxSelectSwitch(
             .height(boxHeight)
             .aspectRatio(22f / 13f)
             .background(color = backgroundColor, shape = shape)
-            .sgxClickable(/*rippleColor, rippleEnable, bounded*/) {
+            .dbClickable(/*rippleColor, rippleEnable, bounded*/) {
                 isLeft = !isLeft
                 onSelectChangedListener?.let {
                     it(isLeft)
@@ -142,7 +127,7 @@ fun SgxSelectSwitch(
 
 @Preview
 @Composable
-private fun PreviewSgxSwitch() {
+private fun PreviewdbSwitch() {
     val context = LocalContext.current
     Column(
         modifier = Modifier
@@ -150,13 +135,13 @@ private fun PreviewSgxSwitch() {
             .padding(20.dp),
     ) {
 
-        SgxSwitch { isActive ->
+        dbSwitch { isActive ->
             Toast.makeText(context, isActive.toString(), Toast.LENGTH_SHORT).show()
         }
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        SgxSelectSwitch { isLeft ->
+        dbSelectSwitch { isLeft ->
             Toast.makeText(context, isLeft.toString(), Toast.LENGTH_SHORT).show()
         }
     }

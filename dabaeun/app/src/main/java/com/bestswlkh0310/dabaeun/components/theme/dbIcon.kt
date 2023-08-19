@@ -35,3 +35,18 @@ fun IcBackArrow(
         icon = R.drawable.ic_back
     )
 }
+
+@Composable
+fun IcCheck(
+    contentDescription: String?,
+    modifier: Modifier = Modifier,
+    tint: Color = Color.Unspecified,
+) {
+    IcDefault(
+        contentDescription = contentDescription,
+        modifier = modifier,
+        tint = tint,
+        icon = R.drawable.ic_check
+    )
+
+}

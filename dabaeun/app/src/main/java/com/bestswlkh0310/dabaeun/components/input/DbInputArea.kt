@@ -32,11 +32,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.bestswlkh0310.dabaeun.components.theme.SgxColor
+import com.bestswlkh0310.dabaeun.components.theme.DbColor
 import com.bestswlkh0310.dabaeun.components.theme.Body1
 import com.bestswlkh0310.dabaeun.components.theme.Body3
-import com.bestswlkh0310.dabaeun.components.theme.SgxTheme
-import com.bestswlkh0310.dabaeun.components.theme.SgxTypography
+import com.bestswlkh0310.dabaeun.components.theme.DbTheme
+import com.bestswlkh0310.dabaeun.components.theme.DbTypography
 
 sealed interface InputAreaType {
     object Default : InputAreaType
@@ -46,7 +46,7 @@ sealed interface InputAreaType {
 }
 
 @Composable
-fun SgxInputArea(
+fun DbInputArea(
     value: String,
     modifier: Modifier = Modifier,
     hint: String = "",
@@ -56,9 +56,9 @@ fun SgxInputArea(
     enabled: Boolean = true,
     singleLine: Boolean = false,
     maxLines: Int = Int.MAX_VALUE,
-    textColor: Color = SgxTheme.color.Gray500,
-    textStyle: TextStyle = SgxTheme.typography.body1,
-    focusColor: Color = SgxTheme.color.MainColor,
+    textColor: Color = DbTheme.color.Gray500,
+    textStyle: TextStyle = DbTheme.typography.body1,
+    focusColor: Color = DbTheme.color.MainColor,
     readOnly: Boolean = false,
     visualTransformation: VisualTransformation = VisualTransformation.None,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default,
@@ -89,7 +89,7 @@ fun SgxInputArea(
                     inputAreaType = currentInputType,
                     focusColor = focusColor
                 ),
-                style = SgxTypography.body3.copy(fontWeight = FontWeight.Normal)
+                style = DbTypography.body3.copy(fontWeight = FontWeight.Normal)
             )
         Spacer(modifier = Modifier.height(4.dp))
 
@@ -128,7 +128,7 @@ fun SgxInputArea(
                     inputAreaType = currentInputType,
                     focusColor = focusColor
                 ),
-                style = SgxTypography.body3.copy(fontWeight = FontWeight.Normal)
+                style = DbTypography.body3.copy(fontWeight = FontWeight.Normal)
             )
     }
 }
@@ -142,8 +142,8 @@ private fun InputAreaDecoration(
     Box(
         modifier = Modifier
             .background(
-                color = SgxTheme.color.Gray50,
-                shape = SgxTheme.shape.small
+                color = DbTheme.color.Gray50,
+                shape = DbTheme.shape.small
             )
             .padding(12.dp),
     ) {
@@ -154,8 +154,8 @@ private fun InputAreaDecoration(
             AnimatedVisibility(visible = inputAreaType is InputAreaType.Default) {
                 Body1(
                     text = hint,
-                    style = SgxTheme.typography.body1.copy(fontWeight = FontWeight.Normal),
-                    textColor = SgxTheme.color.Gray200
+                    style = DbTheme.typography.body1.copy(fontWeight = FontWeight.Normal),
+                    textColor = DbTheme.color.Gray200
                 )
             }
             innerTextField()
@@ -184,10 +184,10 @@ private fun getInputAreaColorByType(
     focusColor: Color,
 ): Color =
     when (inputAreaType) {
-        InputAreaType.Default -> SgxTheme.color.Gray200
-        InputAreaType.UnFocus -> SgxTheme.color.Gray200
+        InputAreaType.Default -> DbTheme.color.Gray200
+        InputAreaType.UnFocus -> DbTheme.color.Gray200
         InputAreaType.Focus -> focusColor
-        InputAreaType.Error -> SgxTheme.color.Error
+        InputAreaType.Error -> DbTheme.color.Error
     }
 
 @Preview(showBackground = true)
@@ -196,13 +196,13 @@ fun InputAreaPreview() {
 
     Column(
         Modifier
-            .background(color = SgxColor.Background)
+            .background(color = DbColor.Background)
             .padding(20.dp)
             .fillMaxSize()
     ) {
 
         var testValue by remember { mutableStateOf("") }
-        SgxInputArea(
+        DbInputArea(
             value = testValue,
             modifier = Modifier
                 .fillMaxWidth(),
@@ -213,7 +213,7 @@ fun InputAreaPreview() {
         Spacer(modifier = Modifier.height(10.dp))
 
         var testValue2 by remember { mutableStateOf("") }
-        SgxInputArea(
+        DbInputArea(
             value = testValue2,
             modifier = Modifier
                 .fillMaxWidth(),
@@ -225,7 +225,7 @@ fun InputAreaPreview() {
         Spacer(modifier = Modifier.height(10.dp))
 
         var testValue3 by remember { mutableStateOf("") }
-        SgxInputArea(
+        DbInputArea(
             value = testValue3,
             onValueChange = { testValue3 = it },
             modifier = Modifier
@@ -235,7 +235,7 @@ fun InputAreaPreview() {
             bottomLabel = "Bottom Label",
             hint = "사이즈 조정 가능",
             isError = testValue3 == "Hello",
-            focusColor = SgxColor.MainColor500,
+            focusColor = DbColor.MainColor500,
         )
     }
 }

@@ -24,7 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.bestswlkh0310.dabaeun.R
-import com.bestswlkh0310.dabaeun.components.modifier.sgxClickable
+import com.bestswlkh0310.dabaeun.components.modifier.dbClickable
 
 val pretendard = FontFamily(
     Font(R.font.pretendard_light, FontWeight.Light),
@@ -35,7 +35,7 @@ val pretendard = FontFamily(
     Font(R.font.pretendard_black, FontWeight.Black)
 )
 
-object SgxTypography {
+object DbTypography {
 
     @Stable
     val headline1 = TextStyle(
@@ -125,11 +125,11 @@ fun Headline1(
     onClick: (() -> Unit)? = null,
 ) {
     Text(
-        modifier = modifier.sgxClickable(
+        modifier = modifier.dbClickable(
             onClick = onClick,
         ),
         text = text,
-        style = SgxTypography.headline1,
+        style = DbTypography.headline1,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
@@ -154,11 +154,11 @@ fun Headline2(
     onClick: (() -> Unit)? = null,
 ) {
     Text(
-        modifier = modifier.sgxClickable(
+        modifier = modifier.dbClickable(
             onClick = onClick,
         ),
         text = text,
-        style = SgxTypography.headline2,
+        style = DbTypography.headline2,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
@@ -183,11 +183,11 @@ fun Title1(
     onClick: (() -> Unit)? = null,
 ) {
     Text(
-        modifier = modifier.sgxClickable(
+        modifier = modifier.dbClickable(
             onClick = onClick,
         ),
         text = text,
-        style = SgxTypography.title1,
+        style = DbTypography.title1,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
@@ -212,11 +212,11 @@ fun Title2(
     onClick: (() -> Unit)? = null,
 ) {
     Text(
-        modifier = modifier.sgxClickable(
+        modifier = modifier.dbClickable(
             onClick = onClick,
         ),
         text = text,
-        style = SgxTypography.title2,
+        style = DbTypography.title2,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
@@ -241,11 +241,11 @@ fun Label1(
     onClick: (() -> Unit)? = null,
 ) {
     Text(
-        modifier = modifier.sgxClickable(
+        modifier = modifier.dbClickable(
             onClick = onClick,
         ),
         text = text,
-        style = SgxTypography.label1,
+        style = DbTypography.label1,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
@@ -270,11 +270,11 @@ fun Label2(
     onClick: (() -> Unit)? = null,
 ) {
     Text(
-        modifier = modifier.sgxClickable(
+        modifier = modifier.dbClickable(
             onClick = onClick,
         ),
         text = text,
-        style = SgxTypography.label2,
+        style = DbTypography.label2,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
@@ -289,7 +289,7 @@ fun Label2(
 fun Body1(
     modifier: Modifier = Modifier,
     text: String,
-    style: TextStyle = SgxTypography.body1,
+    style: TextStyle = DbTypography.body1,
     textColor: Color = LocalContentColor.current,
     textAlign: TextAlign = TextAlign.Start,
     textDecoration: TextDecoration? = null,
@@ -300,7 +300,7 @@ fun Body1(
     onClick: (() -> Unit)? = null,
 ) {
     Text(
-        modifier = modifier.sgxClickable(
+        modifier = modifier.dbClickable(
             onClick = onClick,
         ),
         text = text,
@@ -329,11 +329,11 @@ fun Body2(
     onClick: (() -> Unit)? = null,
 ) {
     Text(
-        modifier = modifier.sgxClickable(
+        modifier = modifier.dbClickable(
             onClick = onClick,
         ),
         text = text,
-        style = SgxTypography.body2,
+        style = DbTypography.body2,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
@@ -348,7 +348,7 @@ fun Body2(
 fun Body3(
     modifier: Modifier = Modifier,
     text: String,
-    style: TextStyle = SgxTypography.body3,
+    style: TextStyle = DbTypography.body3,
     textColor: Color = LocalContentColor.current,
     textAlign: TextAlign = TextAlign.Start,
     textDecoration: TextDecoration? = null,
@@ -359,9 +359,9 @@ fun Body3(
     onClick: (() -> Unit)? = null,
 ) {
     Text(
-        modifier = modifier.sgxClickable(onClick = onClick),
+        modifier = modifier.dbClickable(onClick = onClick),
         text = text,
-        style = SgxTypography.body3,
+        style = DbTypography.body3,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
@@ -376,7 +376,7 @@ fun Body3(
 fun GsxError(
     modifier: Modifier = Modifier,
     text: String,
-    textColor: Color = SgxColor.Error,
+    textColor: Color = DbColor.Error,
     textAlign: TextAlign = TextAlign.Start,
     textDecoration: TextDecoration? = null,
     textOverflow: TextOverflow = TextOverflow.Clip,
@@ -386,11 +386,11 @@ fun GsxError(
     onClick: (() -> Unit)? = null,
 ) {
     Text(
-        modifier = modifier.sgxClickable(
+        modifier = modifier.dbClickable(
             onClick = onClick,
         ),
         text = text,
-        style = SgxTypography.body3,
+        style = DbTypography.body3,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
@@ -401,7 +401,7 @@ fun GsxError(
     )
 }
 
-internal val LocalTypography = staticCompositionLocalOf { SgxTypography }
+internal val LocalTypography = staticCompositionLocalOf { DbTypography }
 
 @Preview
 @Composable

@@ -14,7 +14,7 @@ fun animateAlignmentAsState(
     targetAlignment: Alignment,
 ): State<Alignment> {
     val biased = targetAlignment as BiasAlignment
-    val horizontal by animateFloatAsState(biased.horizontalBias)
-    val vertical by animateFloatAsState(biased.verticalBias)
+    val horizontal by animateFloatAsState(biased.horizontalBias, label = "")
+    val vertical by animateFloatAsState(biased.verticalBias, label = "")
     return remember { derivedStateOf { BiasAlignment(horizontal, vertical) } }
 }

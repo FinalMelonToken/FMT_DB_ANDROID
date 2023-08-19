@@ -1,4 +1,4 @@
-package com.bestswlkh0310.sgx_components.component.basic.toggle
+package com.bestswlkh0310.dabaeun.components.toggle
 
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
@@ -26,16 +26,16 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.bestswlkh0310.sgx_components.modifier.sgxClickable
-import com.bestswlkh0310.sgx_components.theme.IcCheck
-import com.bestswlkh0310.dabaeun.components.theme.SgxTheme
-import com.bestswlkh0310.sgx_components.theme.contentColorFor
+import com.bestswlkh0310.dabaeun.components.modifier.dbClickable
+import com.bestswlkh0310.dabaeun.components.theme.IcCheck
+import com.bestswlkh0310.dabaeun.components.theme.DbTheme
+import com.bestswlkh0310.dabaeun.components.theme.contentColorFor
 
 @Composable
-fun SgxCheckBox(
+fun DbCheckBox(
     modifier: Modifier = Modifier,
-    checkColor: Color = SgxTheme.color.MainColor400,
-    unCheckedColor: Color = SgxTheme.color.Gray500,
+    checkColor: Color = DbTheme.color.MainColor400,
+    unCheckedColor: Color = DbTheme.color.Gray500,
     boxSize: Dp = 12.dp,
     strokeWidth: Dp = 1.dp,
     isChecked: Boolean = false,
@@ -48,12 +48,12 @@ fun SgxCheckBox(
     var isCheck by remember { mutableStateOf(isChecked) }
     val backgroundColor by animateColorAsState(
         if (isCheck) checkColor
-        else SgxTheme.color.Transparent
+        else DbTheme.color.Transparent, label = ""
     )
 
     val strokeColor by animateColorAsState(
         if (isCheck) checkColor
-        else unCheckedColor
+        else unCheckedColor, label = ""
     )
 
     Box(
@@ -61,7 +61,7 @@ fun SgxCheckBox(
             .size(boxSize)
             .background(color = backgroundColor, shape = shape)
             .border(width = strokeWidth, shape = shape, color = strokeColor)
-            .sgxClickable {
+            .dbClickable {
                 isCheck = !isCheck
                 onCheckedChangeListener?.let {
                     it(isCheck)
@@ -84,16 +84,16 @@ fun SgxCheckBox(
 
 @Preview
 @Composable
-private fun SgxCheckBoxPreview() {
+private fun DbCheckBoxPreview() {
     val context = LocalContext.current
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(20.dp)
     ) {
-        SgxCheckBox()
+        DbCheckBox()
         Spacer(modifier = Modifier.height(20.dp))
-        SgxCheckBox(boxSize = 20.dp) { isChecked ->
+        DbCheckBox(boxSize = 20.dp) { isChecked ->
             Toast.makeText(context, isChecked.toString(), Toast.LENGTH_SHORT).show()
         }
     }

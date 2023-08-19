@@ -20,8 +20,8 @@ import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.layout.Layout
 import androidx.compose.ui.unit.dp
 import com.bestswlkh0310.dabaeun.components.basic.Surface
-import com.bestswlkh0310.dabaeun.components.modifier.sgxClickable
-import com.bestswlkh0310.dabaeun.components.theme.SgxTheme
+import com.bestswlkh0310.dabaeun.components.modifier.dbClickable
+import com.bestswlkh0310.dabaeun.components.theme.DbTheme
 import com.bestswlkh0310.dabaeun.components.theme.contentColorFor
 
 sealed interface ButtonType {
@@ -37,7 +37,7 @@ fun Button(
     modifier: Modifier = Modifier,
     iconLeft: @Composable (() -> Unit)? = null,
     iconRight: @Composable (() -> Unit)? = null,
-    shape: Shape = SgxTheme.shape.medium,
+    shape: Shape = DbTheme.shape.medium,
     type: ButtonType = ButtonType.Primary,
     enable: Boolean = true,
     interactionSource: MutableInteractionSource = remember { MutableInteractionSource() },
@@ -89,7 +89,7 @@ fun Button(
 private val IconButtonSize = 48.dp
 
 @Composable
-fun SgxIconButton(
+fun DbIconButton(
     icon: @Composable () -> Unit,
     modifier: Modifier = Modifier,
     type: ButtonType = ButtonType.Primary,
@@ -108,7 +108,7 @@ fun SgxIconButton(
                 Modifier
                     .background(backgroundColor, CircleShape)
                     .clip(CircleShape)
-                    .sgxClickable(
+                    .dbClickable(
                         onClick = if (enable) onClick else null,
                     )
             ),
@@ -131,67 +131,12 @@ fun SgxIconButton(
         }
     }
 }
-/*
-private val RadioButtonDotSize = 12.dp
-private val StrokeWidth = 1.dp
-private val RadioButtonSize = 20.dp
-
-@Composable
-fun SgxRadioButton(
-    selected: Boolean,
-    modifier: Modifier = Modifier,
-    enabled: Boolean = true,
-    type: ButtonType = ButtonType.PrimaryVariant,
-    onClick: (() -> Unit)?,
-) {
-    val selectedColor = animateColorAsState(
-        if (selected) backgroundColorFor(type) else SgxColor.Gray500
-    )
-
-    val dotRadius = animateDpAsState(
-        targetValue = if (selected) RadioButtonDotSize / 2 else 0.dp,
-        animationSpec = tween(durationMillis = 100)
-    )
-
-    val selectableModifier = if (onClick != null) {
-        Modifier.selectable(
-            selected = selected,
-            onClick = onClick,
-            enabled = enabled,
-            role = Role.RadioButton,
-            interactionSource = remember { MutableInteractionSource() },
-            indication = null
-        )
-    } else Modifier
-
-    Canvas(
-        modifier
-            .then(selectableModifier)
-            .wrapContentSize(Alignment.Center)
-            .padding(2.dp)
-            .requiredSize(RadioButtonDotSize)
-    ) {
-        val strokeWidth = StrokeWidth.toPx()
-
-        // Outside Circle
-        drawCircle(
-            selectedColor.value,
-            (RadioButtonSize / 2).toPx() - strokeWidth / 2, // 전체의 반 - 테두리 굵기 -> 반지름
-            style = Stroke(strokeWidth)
-        )
-
-        // Insize Circle -> radius = dotRadius - 테두리 굵기
-        if (dotRadius.value > 0.dp) {
-            drawCircle(selectedColor.value, dotRadius.value.toPx() - strokeWidth / 2, style = Fill)
-        }
-    }
-}*/
 
 @Composable
 private fun backgroundColorFor(type: ButtonType): Color =
     when (type) {
-        ButtonType.Primary -> SgxTheme.color.MainColor
-        ButtonType.PrimaryVariant -> SgxTheme.color.Gray50
-        ButtonType.Disable -> SgxTheme.color.MainColor200
-        ButtonType.None -> SgxTheme.color.Error
+        ButtonType.Primary -> DbTheme.color.MainColor
+        ButtonType.PrimaryVariant -> DbTheme.color.Gray50
+        ButtonType.Disable -> DbTheme.color.MainColor200
+        ButtonType.None -> DbTheme.color.Error
     }
