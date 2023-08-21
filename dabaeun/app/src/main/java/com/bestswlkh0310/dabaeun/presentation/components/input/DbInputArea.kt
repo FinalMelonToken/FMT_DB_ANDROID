@@ -33,7 +33,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.bestswlkh0310.dabaeun.presentation.components.theme.Body1
-import com.bestswlkh0310.dabaeun.presentation.components.theme.Body3
+import com.bestswlkh0310.dabaeun.presentation.components.theme.Body2
 import com.bestswlkh0310.dabaeun.presentation.components.theme.DbColor
 import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTheme
 import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTypography
@@ -83,13 +83,13 @@ fun DbInputArea(
         currentInputType = stateAsInputAreaType(isFocus, value, isError)
 
         if (topLabel.isNotBlank())
-            Body3(
+            Body2(
                 text = topLabel,
                 textColor = getInputAreaColorByType(
                     inputAreaType = currentInputType,
                     focusColor = focusColor
                 ),
-                style = DbTypography.body3.copy(fontWeight = FontWeight.Normal)
+                style = DbTypography.body2.copy(fontWeight = FontWeight.Normal)
             )
         Spacer(modifier = Modifier.height(4.dp))
 
@@ -122,13 +122,13 @@ fun DbInputArea(
 
         Spacer(modifier = Modifier.height(4.dp))
         if (bottomLabel.isNotBlank())
-            Body3(
+            Body2(
                 text = bottomLabel,
                 textColor = getInputAreaColorByType(
                     inputAreaType = currentInputType,
                     focusColor = focusColor
                 ),
-                style = DbTypography.body3.copy(fontWeight = FontWeight.Normal)
+                style = DbTypography.body2.copy(fontWeight = FontWeight.Normal)
             )
     }
 }

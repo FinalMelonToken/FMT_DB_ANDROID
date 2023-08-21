@@ -40,7 +40,7 @@ object DbTypography {
     @Stable
     val headline1 = TextStyle(
         fontFamily = pretendard,
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.SemiBold,
         fontSize = 32.sp,
         lineHeight = 40.sp
     )
@@ -48,7 +48,7 @@ object DbTypography {
     @Stable
     val headline2 = TextStyle(
         fontFamily = pretendard,
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.SemiBold,
         fontSize = 28.sp,
         lineHeight = 36.sp
     )
@@ -65,48 +65,40 @@ object DbTypography {
     val title2 = TextStyle(
         fontFamily = pretendard,
         fontWeight = FontWeight.SemiBold,
-        fontSize = 18.sp,
+        fontSize = 20.sp,
         lineHeight = 22.sp
     )
 
     @Stable
     val body1 = TextStyle(
         fontFamily = pretendard,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 16.sp,
+        fontWeight = FontWeight.Normal,
+        fontSize = 18.sp,
         lineHeight = 24.sp
     )
 
     @Stable
     val body2 = TextStyle(
         fontFamily = pretendard,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 14.sp,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
         lineHeight = 20.sp
-    )
-
-    @Stable
-    val body3 = TextStyle(
-        fontFamily = pretendard,
-        fontWeight = FontWeight.SemiBold,
-        fontSize = 12.sp,
-        lineHeight = 16.sp
     )
 
     @Stable
     val label1 = TextStyle(
         fontFamily = pretendard,
-        fontWeight = FontWeight.Medium,
+        fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
-        lineHeight = 10.sp
+        lineHeight = 16.sp
     )
 
     @Stable
     val label2 = TextStyle(
         fontFamily = pretendard,
-        fontWeight = FontWeight.Medium,
-        fontSize = 12.sp,
-        lineHeight = 16.sp
+        fontWeight = FontWeight.Normal,
+        fontSize = 11.sp,
+        lineHeight = 14.sp
     )
 
 }
@@ -122,6 +114,7 @@ fun Headline1(
     softWrap: Boolean = true,
     maxLines: Int = Int.MAX_VALUE,
     onTextLayout: (TextLayoutResult) -> Unit = {},
+    style: TextStyle = DbTypography.headline1,
     onClick: (() -> Unit)? = null,
 ) {
     Text(
@@ -129,7 +122,7 @@ fun Headline1(
             onClick = onClick,
         ),
         text = text,
-        style = DbTypography.headline1,
+        style = style,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
@@ -150,6 +143,7 @@ fun Headline2(
     textOverflow: TextOverflow = TextOverflow.Clip,
     softWrap: Boolean = true,
     maxLines: Int = Int.MAX_VALUE,
+    style: TextStyle = DbTypography.headline2,
     onTextLayout: (TextLayoutResult) -> Unit = {},
     onClick: (() -> Unit)? = null,
 ) {
@@ -158,7 +152,7 @@ fun Headline2(
             onClick = onClick,
         ),
         text = text,
-        style = DbTypography.headline2,
+        style = style,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
@@ -178,6 +172,7 @@ fun Title1(
     textDecoration: TextDecoration? = null,
     textOverflow: TextOverflow = TextOverflow.Clip,
     softWrap: Boolean = true,
+    style: TextStyle = DbTypography.title1,
     maxLines: Int = Int.MAX_VALUE,
     onTextLayout: (TextLayoutResult) -> Unit = {},
     onClick: (() -> Unit)? = null,
@@ -187,7 +182,7 @@ fun Title1(
             onClick = onClick,
         ),
         text = text,
-        style = DbTypography.title1,
+        style = style,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
@@ -205,6 +200,7 @@ fun Title2(
     textColor: Color = LocalContentColor.current,
     textAlign: TextAlign = TextAlign.Start,
     textDecoration: TextDecoration? = null,
+    style: TextStyle = DbTypography.title2,
     textOverflow: TextOverflow = TextOverflow.Clip,
     softWrap: Boolean = true,
     maxLines: Int = Int.MAX_VALUE,
@@ -216,7 +212,7 @@ fun Title2(
             onClick = onClick,
         ),
         text = text,
-        style = DbTypography.title2,
+        style = style,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
@@ -237,6 +233,7 @@ fun Label1(
     textOverflow: TextOverflow = TextOverflow.Clip,
     softWrap: Boolean = true,
     maxLines: Int = Int.MAX_VALUE,
+    style: TextStyle = DbTypography.label1,
     onTextLayout: (TextLayoutResult) -> Unit = {},
     onClick: (() -> Unit)? = null,
 ) {
@@ -245,7 +242,7 @@ fun Label1(
             onClick = onClick,
         ),
         text = text,
-        style = DbTypography.label1,
+        style = style,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
@@ -264,6 +261,7 @@ fun Label2(
     textAlign: TextAlign = TextAlign.Start,
     textDecoration: TextDecoration? = null,
     textOverflow: TextOverflow = TextOverflow.Clip,
+    style: TextStyle = DbTypography.label2,
     softWrap: Boolean = true,
     maxLines: Int = Int.MAX_VALUE,
     onTextLayout: (TextLayoutResult) -> Unit = {},
@@ -274,7 +272,7 @@ fun Label2(
             onClick = onClick,
         ),
         text = text,
-        style = DbTypography.label2,
+        style = style,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
@@ -324,6 +322,7 @@ fun Body2(
     textDecoration: TextDecoration? = null,
     textOverflow: TextOverflow = TextOverflow.Clip,
     softWrap: Boolean = true,
+    style: TextStyle = DbTypography.body2,
     maxLines: Int = Int.MAX_VALUE,
     onTextLayout: (TextLayoutResult) -> Unit = {},
     onClick: (() -> Unit)? = null,
@@ -333,7 +332,7 @@ fun Body2(
             onClick = onClick,
         ),
         text = text,
-        style = DbTypography.body2,
+        style = style,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
@@ -345,35 +344,7 @@ fun Body2(
 }
 
 @Composable
-fun Body3(
-    modifier: Modifier = Modifier,
-    text: String,
-    style: TextStyle = DbTypography.body3,
-    textColor: Color = LocalContentColor.current,
-    textAlign: TextAlign = TextAlign.Start,
-    textDecoration: TextDecoration? = null,
-    textOverflow: TextOverflow = TextOverflow.Clip,
-    softWrap: Boolean = true,
-    maxLines: Int = Int.MAX_VALUE,
-    onTextLayout: (TextLayoutResult) -> Unit = {},
-    onClick: (() -> Unit)? = null,
-) {
-    Text(
-        modifier = modifier.dbClickable(onClick = onClick),
-        text = text,
-        style = DbTypography.body3,
-        color = textColor,
-        textAlign = textAlign,
-        textDecoration = textDecoration,
-        overflow = textOverflow,
-        softWrap = softWrap,
-        maxLines = maxLines,
-        onTextLayout = onTextLayout,
-    )
-}
-
-@Composable
-fun GsxError(
+fun DbError(
     modifier: Modifier = Modifier,
     text: String,
     textColor: Color = DbColor.Red,
@@ -390,7 +361,7 @@ fun GsxError(
             onClick = onClick,
         ),
         text = text,
-        style = DbTypography.body3,
+        style = DbTypography.body2,
         color = textColor,
         textAlign = textAlign,
         textDecoration = textDecoration,
