@@ -23,8 +23,6 @@ fun NavigationGraph(
         composable(NavGroup.Auth.JOIN) {
 
         }
-
-
     }
 }
 

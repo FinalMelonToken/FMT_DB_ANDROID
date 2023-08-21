@@ -187,7 +187,7 @@ private fun getInputAreaColorByType(
         InputAreaType.Default -> DbTheme.color.Gray200
         InputAreaType.UnFocus -> DbTheme.color.Gray200
         InputAreaType.Focus -> focusColor
-        InputAreaType.Error -> DbTheme.color.Error
+        InputAreaType.Error -> DbTheme.color.Red
     }
 
 @Preview(showBackground = true)

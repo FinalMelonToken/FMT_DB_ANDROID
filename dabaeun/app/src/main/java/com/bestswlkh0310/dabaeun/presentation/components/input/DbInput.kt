@@ -236,7 +236,7 @@ private fun getInputColor(focusColor: Color, inputType: InputType): Color =
         InputType.Default -> DbTheme.color.Gray500
         InputType.UnFocus -> DbTheme.color.Gray500
         InputType.Focus -> focusColor
-        InputType.Error.Default -> DbTheme.color.Error
-        InputType.Error.Focus -> DbTheme.color.Error
-        InputType.Error.UnFocus -> DbTheme.color.Error
+        InputType.Error.Default -> DbTheme.color.Red
+        InputType.Error.Focus -> DbTheme.color.Red
+        InputType.Error.UnFocus -> DbTheme.color.Red
     }

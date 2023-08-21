@@ -132,7 +132,7 @@ fun DbLargeRoundedButton(
 fun DbMaxWidthButton(
     text: String,
     modifier: Modifier = Modifier,
-    shape: Shape = DbTheme.shape.medium,
+    shape: Shape = DbTheme.shape.large,
     type: ButtonType = ButtonType.Primary,
     enable: Boolean = true,
     onClick: () -> Unit,

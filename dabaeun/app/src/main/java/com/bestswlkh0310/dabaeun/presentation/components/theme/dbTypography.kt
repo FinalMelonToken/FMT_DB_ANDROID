@@ -376,7 +376,7 @@ fun Body3(
 fun GsxError(
     modifier: Modifier = Modifier,
     text: String,
-    textColor: Color = DbColor.Error,
+    textColor: Color = DbColor.Red,
     textAlign: TextAlign = TextAlign.Start,
     textDecoration: TextDecoration? = null,
     textOverflow: TextOverflow = TextOverflow.Clip,

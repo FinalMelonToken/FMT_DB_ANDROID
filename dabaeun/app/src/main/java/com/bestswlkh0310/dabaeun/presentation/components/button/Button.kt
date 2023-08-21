@@ -30,6 +30,7 @@ sealed interface ButtonType {
     object PrimaryVariant : ButtonType
     object Disable : ButtonType
     object None: ButtonType
+    object Transparent: ButtonType
 }
 
 @Composable
@@ -138,6 +139,7 @@ private fun backgroundColorFor(type: ButtonType): Color =
     when (type) {
         ButtonType.Primary -> DbTheme.color.MainColor
         ButtonType.PrimaryVariant -> DbTheme.color.Gray50
-        ButtonType.Disable -> DbTheme.color.MainColor200
-        ButtonType.None -> DbTheme.color.Error
+        ButtonType.Disable -> DbTheme.color.Gray100
+        ButtonType.None -> DbTheme.color.Red
+        ButtonType.Transparent -> Color.Transparent
     }
