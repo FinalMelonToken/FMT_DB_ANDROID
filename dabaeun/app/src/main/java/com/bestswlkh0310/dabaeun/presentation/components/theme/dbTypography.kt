@@ -224,66 +224,6 @@ fun Title2(
 }
 
 @Composable
-fun Label1(
-    modifier: Modifier = Modifier,
-    text: String,
-    textColor: Color = LocalContentColor.current,
-    textAlign: TextAlign = TextAlign.Start,
-    textDecoration: TextDecoration? = null,
-    textOverflow: TextOverflow = TextOverflow.Clip,
-    softWrap: Boolean = true,
-    maxLines: Int = Int.MAX_VALUE,
-    style: TextStyle = DbTypography.label1,
-    onTextLayout: (TextLayoutResult) -> Unit = {},
-    onClick: (() -> Unit)? = null,
-) {
-    Text(
-        modifier = modifier.dbClickable(
-            onClick = onClick,
-        ),
-        text = text,
-        style = style,
-        color = textColor,
-        textAlign = textAlign,
-        textDecoration = textDecoration,
-        overflow = textOverflow,
-        softWrap = softWrap,
-        maxLines = maxLines,
-        onTextLayout = onTextLayout,
-    )
-}
-
-@Composable
-fun Label2(
-    modifier: Modifier = Modifier,
-    text: String,
-    textColor: Color = LocalContentColor.current,
-    textAlign: TextAlign = TextAlign.Start,
-    textDecoration: TextDecoration? = null,
-    textOverflow: TextOverflow = TextOverflow.Clip,
-    style: TextStyle = DbTypography.label2,
-    softWrap: Boolean = true,
-    maxLines: Int = Int.MAX_VALUE,
-    onTextLayout: (TextLayoutResult) -> Unit = {},
-    onClick: (() -> Unit)? = null,
-) {
-    Text(
-        modifier = modifier.dbClickable(
-            onClick = onClick,
-        ),
-        text = text,
-        style = style,
-        color = textColor,
-        textAlign = textAlign,
-        textDecoration = textDecoration,
-        overflow = textOverflow,
-        softWrap = softWrap,
-        maxLines = maxLines,
-        onTextLayout = onTextLayout,
-    )
-}
-
-@Composable
 fun Body1(
     modifier: Modifier = Modifier,
     text: String,
@@ -323,6 +263,66 @@ fun Body2(
     textOverflow: TextOverflow = TextOverflow.Clip,
     softWrap: Boolean = true,
     style: TextStyle = DbTypography.body2,
+    maxLines: Int = Int.MAX_VALUE,
+    onTextLayout: (TextLayoutResult) -> Unit = {},
+    onClick: (() -> Unit)? = null,
+) {
+    Text(
+        modifier = modifier.dbClickable(
+            onClick = onClick,
+        ),
+        text = text,
+        style = style,
+        color = textColor,
+        textAlign = textAlign,
+        textDecoration = textDecoration,
+        overflow = textOverflow,
+        softWrap = softWrap,
+        maxLines = maxLines,
+        onTextLayout = onTextLayout,
+    )
+}
+
+@Composable
+fun Label1(
+    modifier: Modifier = Modifier,
+    text: String,
+    textColor: Color = LocalContentColor.current,
+    textAlign: TextAlign = TextAlign.Start,
+    textDecoration: TextDecoration? = null,
+    textOverflow: TextOverflow = TextOverflow.Clip,
+    softWrap: Boolean = true,
+    maxLines: Int = Int.MAX_VALUE,
+    style: TextStyle = DbTypography.label1,
+    onTextLayout: (TextLayoutResult) -> Unit = {},
+    onClick: (() -> Unit)? = null,
+) {
+    Text(
+        modifier = modifier.dbClickable(
+            onClick = onClick,
+        ),
+        text = text,
+        style = style,
+        color = textColor,
+        textAlign = textAlign,
+        textDecoration = textDecoration,
+        overflow = textOverflow,
+        softWrap = softWrap,
+        maxLines = maxLines,
+        onTextLayout = onTextLayout,
+    )
+}
+
+@Composable
+fun Label2(
+    modifier: Modifier = Modifier,
+    text: String,
+    textColor: Color = LocalContentColor.current,
+    textAlign: TextAlign = TextAlign.Start,
+    textDecoration: TextDecoration? = null,
+    textOverflow: TextOverflow = TextOverflow.Clip,
+    style: TextStyle = DbTypography.label2,
+    softWrap: Boolean = true,
     maxLines: Int = Int.MAX_VALUE,
     onTextLayout: (TextLayoutResult) -> Unit = {},
     onClick: (() -> Unit)? = null,

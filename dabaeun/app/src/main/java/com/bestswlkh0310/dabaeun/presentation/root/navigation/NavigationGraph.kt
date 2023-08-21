@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.bestswlkh0310.dabaeun.presentation.features.login.LoginScreen
+import com.bestswlkh0310.dabaeun.presentation.features.onboard.OnBoardScreen
 
 
 @Composable
@@ -20,12 +21,12 @@ fun NavigationGraph(
             LoginScreen(navController = navController)
         }
 
-        composable(NavGroup.Auth.JOIN) {
-
+        composable(NavGroup.Auth.ON_BOARD) {
+            OnBoardScreen(navController = navController)
         }
     }
 }
 
 
     fun getStartDestination(enableAutoLogin: Boolean) =
-        if (enableAutoLogin) NavGroup.Main.MAIN else NavGroup.Auth.LOGIN
+        if (enableAutoLogin) NavGroup.Main.MAIN else NavGroup.Auth.ON_BOARD

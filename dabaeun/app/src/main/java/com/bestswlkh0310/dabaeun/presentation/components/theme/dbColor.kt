@@ -57,6 +57,7 @@ private fun DbColor.contentColorFor(backgroundColor: Color): Color {
         Gray100 -> White
         Background -> Black
         White -> Black
+        Transparent -> Blue
         else -> White
     }
 }

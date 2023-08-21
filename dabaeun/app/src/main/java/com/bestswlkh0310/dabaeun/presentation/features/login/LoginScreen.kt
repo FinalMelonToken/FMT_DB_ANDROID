@@ -23,6 +23,7 @@ import com.bestswlkh0310.dabaeun.presentation.components.button.DbMaxWidthButton
 import com.bestswlkh0310.dabaeun.presentation.components.button.DbMediumRoundedButton
 import com.bestswlkh0310.dabaeun.presentation.components.input.DbInput
 import com.bestswlkh0310.dabaeun.presentation.components.theme.DbColor
+import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTheme
 import com.bestswlkh0310.dabaeun.presentation.components.theme.Label1
 import com.bestswlkh0310.dabaeun.presentation.components.theme.Label2
 
@@ -41,7 +42,7 @@ fun LoginScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(horizontal = 14.dp)
-                .background(MaterialTheme.colorScheme.background),
+                .background(DbTheme.color.Background),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {

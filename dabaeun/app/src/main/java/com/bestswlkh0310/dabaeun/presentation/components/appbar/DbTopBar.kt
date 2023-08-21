@@ -33,11 +33,11 @@ fun DbTopBar(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(54.dp)
+                .height(60.dp)
                 .background(MaterialTheme.colorScheme.background),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Spacer(modifier = Modifier.width(12.dp))
+            Spacer(modifier = Modifier.width(8.dp))
             if (enablePrimaryButton) {
                 DbIconButton(
                     modifier = Modifier,
@@ -46,7 +46,7 @@ fun DbTopBar(
                     onClick = primaryButtonCallback
                 )
             }
-            Spacer(modifier = Modifier.width(12.dp))
+            Spacer(modifier = Modifier.width(8.dp))
             Title1(
                 text = titleText,
             )

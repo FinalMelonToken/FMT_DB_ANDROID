@@ -14,6 +14,7 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.text.style.TextAlign
+import com.bestswlkh0310.dabaeun.presentation.components.theme.Body1
 import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTheme
 import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTheme.shape
 import com.bestswlkh0310.dabaeun.presentation.components.theme.Title2
@@ -50,7 +51,7 @@ fun DbRoundedButton(
         enable = enable,
         interactionSource = interactionSource,
     ) {
-        Title2(
+        Body1(
             text = text,
             textColor = textColor,
             modifier = if (isMaxWidth) Modifier
@@ -64,6 +65,7 @@ fun DbRoundedButton(
 @Composable
 fun DbSmallRoundedButton(
     text: String,
+    textColor: Color = DbTheme.color.White,
     modifier: Modifier = Modifier,
     iconLeft: @Composable (() -> Unit)? = null,
     iconRight: @Composable (() -> Unit)? = null,
@@ -73,6 +75,7 @@ fun DbSmallRoundedButton(
 ) {
     DbRoundedButton(
         text = text,
+        textColor = textColor,
         modifier = modifier,
         iconLeft = iconLeft,
         iconRight = iconRight,
@@ -88,6 +91,7 @@ fun DbSmallRoundedButton(
 fun DbMediumRoundedButton(
     text: String,
     modifier: Modifier = Modifier,
+    textColor: Color = DbTheme.color.White,
     iconLeft: @Composable (() -> Unit)? = null,
     iconRight: @Composable (() -> Unit)? = null,
     type: ButtonType = ButtonType.Primary,
@@ -98,6 +102,7 @@ fun DbMediumRoundedButton(
         text = text,
         modifier = modifier,
         iconLeft = iconLeft,
+        textColor = textColor,
         iconRight = iconRight,
         shape = shape.medium,
         type = type,
@@ -110,6 +115,7 @@ fun DbMediumRoundedButton(
 fun DbLargeRoundedButton(
     text: String,
     modifier: Modifier = Modifier,
+    textColor: Color = DbTheme.color.White,
     iconLeft: @Composable (() -> Unit)? = null,
     iconRight: @Composable (() -> Unit)? = null,
     type: ButtonType = ButtonType.Primary,
@@ -119,6 +125,7 @@ fun DbLargeRoundedButton(
     DbRoundedButton(
         text = text,
         modifier = modifier,
+        textColor = textColor,
         iconLeft = iconLeft,
         iconRight = iconRight,
         shape = shape.large,
@@ -131,6 +138,7 @@ fun DbLargeRoundedButton(
 @Composable
 fun DbMaxWidthButton(
     text: String,
+    textColor: Color = DbTheme.color.White,
     modifier: Modifier = Modifier,
     shape: Shape = DbTheme.shape.large,
     type: ButtonType = ButtonType.Primary,
@@ -139,6 +147,7 @@ fun DbMaxWidthButton(
 ) {
     DbRoundedButton(
         text = text,
+        textColor = textColor,
         modifier = modifier,
         shape = shape,
         type = type,
@@ -151,6 +160,7 @@ fun DbMaxWidthButton(
 @Composable
 fun DbGrayButton(
     text: String,
+    textColor: Color = DbTheme.color.Gray500,
     modifier: Modifier = Modifier,
     iconLeft: @Composable (() -> Unit)? = null,
     iconRight: @Composable (() -> Unit)? = null,
@@ -160,7 +170,7 @@ fun DbGrayButton(
 ) {
     DbRoundedButton(
         text = text,
-        textColor = DbTheme.color.Gray500,
+        textColor = textColor,
         modifier = modifier,
         iconLeft = iconLeft,
         iconRight = iconRight,

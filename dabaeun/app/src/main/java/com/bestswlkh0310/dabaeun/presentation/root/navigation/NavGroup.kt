@@ -2,8 +2,8 @@ package com.bestswlkh0310.dabaeun.presentation.root.navigation
 
 sealed class NavGroup(val group: String) {
     object Auth : NavGroup("auth") {
+        const val ON_BOARD = "on_board"
         const val LOGIN = "login"
-        const val JOIN = "join"
     }
 
     object Main : NavGroup("main") {
