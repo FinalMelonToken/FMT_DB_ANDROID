@@ -26,8 +26,8 @@ import com.bestswlkh0310.dabaeun.presentation.root.navigation.NavGroup
 
 @Composable
 fun HomeBottomNavigation(
-    selectedTab: String,
-    selectedTabCallback: (String) -> Unit
+    selectedTab: NavGroup.Main,
+    selectedTabCallback: (NavGroup.Main) -> Unit
 ) {
     val items = listOf(
         NavGroup.Main.HOME,
@@ -64,12 +64,12 @@ fun HomeBottomNavigation(
                     verticalArrangement = Arrangement.Center
                 ) {
                     Label2(
-                        text = item,
+                        text = item.title,
                         modifier = Modifier
                             .height(26.dp)
                     )
                     if (item == selectedTab) {
-                        BottomDivider(item = item, animatedOpacity = animatedOpacity)
+                        BottomDivider(item = item.title, animatedOpacity = animatedOpacity)
                     }
                 }
             }

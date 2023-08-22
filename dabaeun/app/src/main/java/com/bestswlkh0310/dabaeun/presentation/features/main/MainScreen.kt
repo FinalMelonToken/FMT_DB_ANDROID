@@ -37,6 +37,7 @@ fun MainScreen(
                     NavGroup.Main.HOME -> HomeScreen(navController = navController)
                     NavGroup.Main.QUIZ -> QuizScreen(navController = navController)
                     NavGroup.Main.MY -> MyScreen(navController = navController)
+                    else -> {}
                 }
             }
         }

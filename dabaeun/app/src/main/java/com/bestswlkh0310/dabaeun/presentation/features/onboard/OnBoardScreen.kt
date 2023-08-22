@@ -120,7 +120,7 @@ fun OnBoardScreen(
         Spacer(modifier = Modifier.weight(1f))
         DbMaxWidthButton(text = "시작하기") {
             navController.popBackStack()
-            navController.navigate(NavGroup.Auth.LOGIN) {
+            navController.navigate(NavGroup.Auth.LOGIN.title) {
                 launchSingleTop = true
             }
         }

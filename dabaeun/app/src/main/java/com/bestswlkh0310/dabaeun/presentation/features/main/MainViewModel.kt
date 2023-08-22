@@ -3,6 +3,7 @@ package com.bestswlkh0310.dabaeun.presentation.features.main
 import androidx.lifecycle.ViewModel
 import com.bestswlkh0310.dabaeun.presentation.features.login.LoginSideEffect
 import com.bestswlkh0310.dabaeun.presentation.features.login.LoginState
+import com.bestswlkh0310.dabaeun.presentation.root.navigation.NavGroup
 import dagger.hilt.android.lifecycle.HiltViewModel
 import org.orbitmvi.orbit.ContainerHost
 import org.orbitmvi.orbit.syntax.simple.intent
@@ -16,7 +17,7 @@ class MainViewModel @Inject constructor(
 ): ViewModel(), ContainerHost<MainState, MainSideEffect> {
     override val container = container<MainState, MainSideEffect>(MainState())
 
-    fun updateSelectedTab(it: String) = intent {
+    fun updateSelectedTab(it: NavGroup.Main) = intent {
         reduce {
             state.copy(selectedTab = it)
         }

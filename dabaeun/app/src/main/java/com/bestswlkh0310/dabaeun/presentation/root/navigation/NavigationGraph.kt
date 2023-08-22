@@ -21,33 +21,33 @@ fun NavigationGraph(
         navController = navController,
         startDestination = getStartDestination(enableAutoLogin)
     ) {
-        composable(NavGroup.Auth.LOGIN) {
+        composable(NavGroup.Auth.LOGIN.title) {
             LoginScreen(navController = navController)
         }
 
-        composable(NavGroup.Auth.ON_BOARD) {
+        composable(NavGroup.Auth.ON_BOARD.title) {
             OnBoardScreen(navController = navController)
         }
 
-        composable(NavGroup.Main.MAIN) {
+        composable(NavGroup.Main.MAIN.title) {
             MainScreen(navController = navController)
         }
 
-        composable(NavGroup.Main.HOME) {
+        composable(NavGroup.Main.HOME.title) {
             HomeScreen(navController = navController)
         }
 
-        composable(NavGroup.Main.QUIZ) {
+        composable(NavGroup.Main.QUIZ.title) {
             QuizScreen(navController = navController)
         }
 
-        composable(NavGroup.Main.MY) {
+        composable(NavGroup.Main.MY.title) {
             MyScreen(navController = navController)
         }
     }
 }
 
-const val Start = NavGroup.Main.MAIN
+private val Start = NavGroup.Main.MAIN.title
 
 fun getStartDestination(enableAutoLogin: Boolean) =
-    if (enableAutoLogin) NavGroup.Main.MAIN else Start
+    if (enableAutoLogin) NavGroup.Main.MAIN.title else Start
