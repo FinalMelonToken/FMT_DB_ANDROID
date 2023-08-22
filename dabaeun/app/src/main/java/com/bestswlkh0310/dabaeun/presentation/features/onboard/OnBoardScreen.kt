@@ -101,7 +101,7 @@ fun OnBoardScreen(
         }
         Spacer(modifier = Modifier.height(36.dp))
 
-        Row(
+        Row( 
             Modifier
                 .fillMaxWidth(),
             horizontalArrangement = Arrangement.Center
