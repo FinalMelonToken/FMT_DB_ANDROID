@@ -17,7 +17,6 @@ import androidx.compose.ui.text.style.TextAlign
 import com.bestswlkh0310.dabaeun.presentation.components.theme.Body1
 import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTheme
 import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTheme.shape
-import com.bestswlkh0310.dabaeun.presentation.components.theme.Title2
 
 @Composable
 fun DbRoundedButton(
@@ -193,13 +192,40 @@ fun DbKeyBoardButton(
 
 @Composable
 fun DbGrayButton(
+    modifier: Modifier = Modifier,
     text: String,
     textColor: Color = DbTheme.color.Gray500,
-    modifier: Modifier = Modifier,
     isScaleAnim: Boolean = true,
     iconLeft: @Composable (() -> Unit)? = null,
     iconRight: @Composable (() -> Unit)? = null,
-    type: ButtonType = ButtonType.PrimaryVariant,
+    type: ButtonType = ButtonType.Gray,
+    enable: Boolean = true,
+    onClick: () -> Unit,
+) {
+    DbRoundedButton(
+        text = text,
+        textColor = textColor,
+        modifier = modifier,
+        iconLeft = iconLeft,
+        iconRight = iconRight,
+        isScaleAnim = isScaleAnim,
+        shape = shape.small,
+        type = type,
+        enable = enable,
+        onClick = onClick,
+    )
+}
+
+
+@Composable
+fun DbGraySelectBottom(
+    modifier: Modifier = Modifier,
+    text: String,
+    textColor: Color = DbTheme.color.Gray500,
+    isScaleAnim: Boolean = true,
+    iconLeft: @Composable (() -> Unit)? = null,
+    iconRight: @Composable (() -> Unit)? = null,
+    type: ButtonType = ButtonType.Gray,
     enable: Boolean = true,
     onClick: () -> Unit,
 ) {

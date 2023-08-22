@@ -9,7 +9,8 @@ class DbShape(
     val none: CornerBasedShape = RoundedCornerShape(0.dp),
     val small: CornerBasedShape = RoundedCornerShape(5.dp),
     val medium: CornerBasedShape = RoundedCornerShape(10.dp),
-    val large: CornerBasedShape = RoundedCornerShape(20.dp)
+    val large: CornerBasedShape = RoundedCornerShape(20.dp),
+    val max: CornerBasedShape = RoundedCornerShape(50)
 ) {
 
     fun copy(

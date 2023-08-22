@@ -11,7 +11,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.bestswlkh0310.dabaeun.presentation.features.home.HomeBottomNavigation
 import com.bestswlkh0310.dabaeun.presentation.features.home.HomeScreen
 import com.bestswlkh0310.dabaeun.presentation.features.my.MyScreen
 import com.bestswlkh0310.dabaeun.presentation.features.quiz.QuizScreen
@@ -26,7 +25,7 @@ fun MainScreen(
     val state by viewModel.container.stateFlow.collectAsState()
     Scaffold(
         bottomBar = {
-            HomeBottomNavigation(selectedTab = state.selectedTab, selectedTabCallback = {
+            MainBottomNavigation(selectedTab = state.selectedTab, selectedTabCallback = {
                 viewModel.updateSelectedTab(it)
             })
         }

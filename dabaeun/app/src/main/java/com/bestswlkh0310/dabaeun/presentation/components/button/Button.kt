@@ -27,10 +27,10 @@ import com.bestswlkh0310.dabaeun.presentation.components.theme.contentColorFor
 
 sealed interface ButtonType {
     object Primary : ButtonType
-    object PrimaryVariant : ButtonType
+    object Gray : ButtonType
     object Disable : ButtonType
-    object None: ButtonType
     object Transparent: ButtonType
+    object Black: ButtonType
 }
 
 @Composable
@@ -138,8 +138,9 @@ fun DbIconButton(
 private fun backgroundColorFor(type: ButtonType): Color =
     when (type) {
         ButtonType.Primary -> DbTheme.color.MainColor
-        ButtonType.PrimaryVariant -> DbTheme.color.Gray50
+        ButtonType.Black -> DbTheme.color.Gray800
+        ButtonType.Gray -> DbTheme.color.Gray50
         ButtonType.Disable -> DbTheme.color.Gray100
-        ButtonType.None -> DbTheme.color.Red
         ButtonType.Transparent -> Color.Transparent
+        ButtonType.Black -> DbTheme.color.White
     }
