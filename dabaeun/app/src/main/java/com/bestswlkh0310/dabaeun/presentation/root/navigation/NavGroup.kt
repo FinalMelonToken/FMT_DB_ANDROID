@@ -8,6 +8,7 @@ sealed class NavGroup(val group: String) {
 
     object Main : NavGroup("main") {
         const val MAIN = "main"
+        const val HOME = "home"
         const val QUIZ = "quiz"
         const val MY = "my"
     }
