@@ -6,6 +6,7 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.unit.dp
 
 class DbShape(
+    val none: CornerBasedShape = RoundedCornerShape(0.dp),
     val small: CornerBasedShape = RoundedCornerShape(5.dp),
     val medium: CornerBasedShape = RoundedCornerShape(10.dp),
     val large: CornerBasedShape = RoundedCornerShape(20.dp)

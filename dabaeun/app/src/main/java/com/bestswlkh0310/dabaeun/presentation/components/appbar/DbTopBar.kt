@@ -33,8 +33,7 @@ fun DbTopBar(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(60.dp)
-                .background(MaterialTheme.colorScheme.background),
+                .height(60.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Spacer(modifier = Modifier.width(8.dp))
