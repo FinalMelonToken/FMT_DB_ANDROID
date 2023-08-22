@@ -9,7 +9,7 @@ import com.bestswlkh0310.dabaeun.R
 
 @Composable
 fun IcDefault(
-    contentDescription: String?,
+    contentDescription: String? = null,
     modifier: Modifier = Modifier,
     tint: Color = Color.Unspecified,
     icon: Int
