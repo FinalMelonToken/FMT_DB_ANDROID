@@ -30,21 +30,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import androidx.navigation.NavGraph.Companion.findStartDestination
-import com.bestswlkh0310.dabaeun.presentation.components.appbar.DbTopBar
-import com.bestswlkh0310.dabaeun.presentation.components.button.ButtonType
 import com.bestswlkh0310.dabaeun.presentation.components.button.DbMaxWidthButton
-import com.bestswlkh0310.dabaeun.presentation.components.input.DbInput
-import com.bestswlkh0310.dabaeun.presentation.components.modifier.dbClickable
-import com.bestswlkh0310.dabaeun.presentation.components.theme.Body1
-import com.bestswlkh0310.dabaeun.presentation.components.theme.DbColor
 import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTheme
 import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTypography
-import com.bestswlkh0310.dabaeun.presentation.components.theme.Headline1
-import com.bestswlkh0310.dabaeun.presentation.components.theme.Headline2
-import com.bestswlkh0310.dabaeun.presentation.components.theme.Label1
 import com.bestswlkh0310.dabaeun.presentation.components.theme.Title1
-import com.bestswlkh0310.dabaeun.presentation.components.theme.Title2
 import com.bestswlkh0310.dabaeun.presentation.root.navigation.NavGroup
 
 private val titleList = arrayListOf(

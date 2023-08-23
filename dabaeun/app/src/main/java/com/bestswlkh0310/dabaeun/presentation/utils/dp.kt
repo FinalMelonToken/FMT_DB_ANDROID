@@ -4,8 +4,8 @@ import android.content.res.Resources
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
-val Int.dp: Dp
+val Int.toDp: Dp
     get() = (this * Resources.getSystem().displayMetrics.density + 0.5f).dp
 
-val Float.dp: Dp
+val Float.toDp: Dp
     get() = (this * Resources.getSystem().displayMetrics.density + 0.5f).dp
