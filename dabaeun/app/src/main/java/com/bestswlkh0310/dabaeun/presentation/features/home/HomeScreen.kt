@@ -65,6 +65,7 @@ fun HomeScreen(
     val state = viewModel.container.stateFlow.collectAsState().value
     val scrollState = rememberLazyListState()
     var height by remember { mutableStateOf(0.dp) }
+    var topHeight by remember { mutableStateOf(200.dp) }
 
     var currentYPos by remember {
         mutableStateOf(0.dp)
@@ -92,6 +93,9 @@ fun HomeScreen(
         titleText = NavGroup.Main.HOME.title,
         enablePrimaryButton = false,
         yOffset = yOffset,
+        heightCallBack = {
+                         topHeight = it + 14.dp
+        },
         body1 = {
             LazyRow(
                 modifier = Modifier
@@ -127,6 +131,9 @@ fun HomeScreen(
                 .padding(horizontal = 14.dp),
             state = scrollState
         ) {
+            item {
+                Spacer(modifier = Modifier.height(topHeight))
+            }
             items(boardListList) {
                 DbBoardCard(
                     modifier = Modifier

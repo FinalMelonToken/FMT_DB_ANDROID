@@ -1,5 +1,6 @@
 package com.bestswlkh0310.dabaeun.presentation.components.appbar
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -22,7 +23,11 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.bestswlkh0310.dabaeun.R
+import com.bestswlkh0310.dabaeun.presentation.components.basic.Surface
 import com.bestswlkh0310.dabaeun.presentation.components.button.DbIconButton
+import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTheme
+import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTypography.body1
+import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTypography.body2
 import com.bestswlkh0310.dabaeun.presentation.components.theme.Title1
 
 @Composable
@@ -32,6 +37,7 @@ fun DbTopBar(
     primaryButtonCallback: () -> Unit = {},
     titleText: String = "",
     yOffset: Dp = 0.dp,
+    heightCallBack: (Dp) -> Unit = {},
     body1: @Composable ColumnScope.() -> Unit = {},
     body2: @Composable ColumnScope.() -> Unit,
 ) {
@@ -45,10 +51,15 @@ fun DbTopBar(
             .fillMaxSize()
     ) {
         Column {
-            Spacer(
-                modifier = Modifier
-                    .height(barHeight + yOffset)
-            )
+//            Surface(
+//                modifier = Modifier
+//                    .height(barHeight)
+//            ) {
+//                Spacer(
+//                    modifier = Modifier
+//                        .height(barHeight + yOffset)
+//                )
+//            }
             body2()
         }
 
@@ -59,7 +70,9 @@ fun DbTopBar(
                     barHeight = with(density) {
                         coordinates.size.height.toDp()
                     }
+                    heightCallBack(barHeight)
                 }
+                .background(DbTheme.color.White)
         ) {
             Row(
                 modifier = Modifier
