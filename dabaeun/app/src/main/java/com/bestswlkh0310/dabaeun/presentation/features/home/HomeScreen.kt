@@ -14,6 +14,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material3.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -94,7 +95,7 @@ fun HomeScreen(
         enablePrimaryButton = false,
         yOffset = yOffset,
         heightCallBack = {
-             topHeight = it + 14.dp
+             topHeight = it
         },
         body1 = {
             LazyRow(
@@ -127,8 +128,7 @@ fun HomeScreen(
     ) {
         LazyColumn(
             modifier = Modifier
-                .background(DbTheme.color.Background)
-                .padding(horizontal = 14.dp),
+                .background(DbTheme.color.Background),
             state = scrollState
         ) {
             item {
@@ -143,6 +143,13 @@ fun HomeScreen(
                             }
                         },
                     boardList = it
+                ) {
+                    navController.navigate(NavGroup.Feature.BOARD.title) {
+                        launchSingleTop = true
+                    }
+                }
+                Divider(
+                    color = DbTheme.color.Gray100
                 )
             }
         }

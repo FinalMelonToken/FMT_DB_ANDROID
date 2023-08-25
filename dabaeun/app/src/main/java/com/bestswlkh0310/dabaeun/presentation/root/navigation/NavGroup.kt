@@ -15,6 +15,7 @@ sealed class NavGroup(val group: String) {
         object MY: Main("my", "MY", R.drawable.ic_my)
     }
 
-    object Feature : NavGroup("feature") {
+    sealed class Feature(val id: String, val title: String) : NavGroup("feature") {
+        object BOARD: Feature("board", "게시글")
     }
 }

@@ -19,6 +19,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.bestswlkh0310.dabaeun.data.model.BoardList
+import com.bestswlkh0310.dabaeun.presentation.components.modifier.dbClickable
 import com.bestswlkh0310.dabaeun.presentation.components.theme.Body1
 import com.bestswlkh0310.dabaeun.presentation.components.theme.Body2
 import com.bestswlkh0310.dabaeun.presentation.components.theme.DbShape
@@ -29,10 +30,17 @@ import com.bestswlkh0310.dabaeun.presentation.components.theme.Title1
 @Composable
 fun DbBoardCard(
     modifier: Modifier = Modifier,
-    boardList: BoardList
+    boardList: BoardList,
+    onClick: () -> Unit = {},
 ) {
     Column(
-        modifier = modifier.clip(DbTheme.shape.medium)
+        modifier = modifier
+            .dbClickable(
+                rippleEnable = true,
+                onClick = onClick)
+            .padding(horizontal = 14.dp)
+            .padding(top = 14.dp)
+
     ) {
         val painter = painterResource(id = boardList.thumbnail)
         Image(
