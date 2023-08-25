@@ -47,7 +47,7 @@ fun NavigationGraph(
     }
 }
 
-private val Start = NavGroup.Main.MAIN.title
+private val Start = NavGroup.Auth.LOGIN.title
 
 fun getStartDestination(enableAutoLogin: Boolean) =
     if (enableAutoLogin) NavGroup.Main.MAIN.title else Start

@@ -17,6 +17,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
@@ -43,6 +46,7 @@ fun LoginScreen(
     val allEnter = state.pw.isNotBlank() && state.email.isNotBlank()
     val keyboardShow by rememberKeyboardIsOpen()
     val height by rememberKeyboardHeight()
+    var topHeight by remember { mutableStateOf(0.dp) }
     LaunchedEffect(keyboardShow) {
         Log.d("TAG", "$height - LoginScreen() called")
         Log.d("TAG", "$keyboardShow - LoginScreen() called")
@@ -50,8 +54,14 @@ fun LoginScreen(
     DbTopBar(
         titleText = "로그인",
         enablePrimaryButton = false,
+        heightCallBack = {
+            topHeight = it
+        }
     ) {
-        Box {
+        Box(
+            modifier = Modifier
+                .padding(top = topHeight)
+        ) {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
