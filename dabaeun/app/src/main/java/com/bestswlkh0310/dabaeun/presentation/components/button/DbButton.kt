@@ -145,7 +145,7 @@ fun DbLargeRoundedButton(
 fun DbMaxWidthButton(
     text: String,
     textColor: Color = DbTheme.color.White,
-    isScaleAnim: Boolean = false,
+    isScaleAnim: Boolean = true,
     modifier: Modifier = Modifier,
     shape: Shape = DbTheme.shape.medium,
     type: ButtonType = ButtonType.Primary,
@@ -170,7 +170,7 @@ fun DbMaxWidthButton(
 fun DbKeyBoardButton(
     text: String,
     textColor: Color = DbTheme.color.White,
-    isScaleAnim: Boolean = true,
+    isScaleAnim: Boolean = false,
     modifier: Modifier = Modifier,
     shape: Shape = DbTheme.shape.none,
     type: ButtonType = ButtonType.Primary,
