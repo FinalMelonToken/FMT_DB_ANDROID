@@ -47,13 +47,13 @@ private val categoryList = arrayListOf(
 )
 
 private val boardListList = arrayListOf(
-    BoardList("파이썬했어요", R.drawable.ic_launcher_background, "나다", LocalDateTime.now(), R.drawable.ic_launcher_foreground),
-    BoardList("파이썬했어요", R.drawable.ic_launcher_background, "나다", LocalDateTime.now(), R.drawable.ic_launcher_foreground),
-    BoardList("파이썬했어요", R.drawable.ic_launcher_background, "나다", LocalDateTime.now(), R.drawable.ic_launcher_foreground),
-    BoardList("파이썬했어요", R.drawable.ic_launcher_background, "나다", LocalDateTime.now(), R.drawable.ic_launcher_foreground),
-    BoardList("파이썬했어요", R.drawable.ic_launcher_background, "나다", LocalDateTime.now(), R.drawable.ic_launcher_foreground),
-    BoardList("파이썬했어요", R.drawable.ic_launcher_background, "나다", LocalDateTime.now(), R.drawable.ic_launcher_foreground),
-    BoardList("파이썬했어요", R.drawable.ic_launcher_background, "나다", LocalDateTime.now(), R.drawable.ic_launcher_foreground),
+    BoardList("파이썬했어요", R.drawable.ic_launcher_background, "나다", LocalDateTime.now(), R.drawable.ic_launcher_background),
+    BoardList("파이썬했어요", R.drawable.ic_launcher_background, "나다", LocalDateTime.now(), R.drawable.ic_launcher_background),
+    BoardList("파이썬했어요", R.drawable.ic_launcher_background, "나다", LocalDateTime.now(), R.drawable.ic_launcher_background),
+    BoardList("파이썬했어요", R.drawable.ic_launcher_background, "나다", LocalDateTime.now(), R.drawable.ic_launcher_background),
+    BoardList("파이썬했어요", R.drawable.ic_launcher_background, "나다", LocalDateTime.now(), R.drawable.ic_launcher_background),
+    BoardList("파이썬했어요", R.drawable.ic_launcher_background, "나다", LocalDateTime.now(), R.drawable.ic_launcher_background),
+    BoardList("파이썬했어요", R.drawable.ic_launcher_background, "나다", LocalDateTime.now(), R.drawable.ic_launcher_background),
 )
 
 @SuppressLint("SuspiciousIndentation", "CoroutineCreationDuringComposition")
@@ -94,7 +94,7 @@ fun HomeScreen(
         enablePrimaryButton = false,
         yOffset = yOffset,
         heightCallBack = {
-                         topHeight = it + 14.dp
+             topHeight = it + 14.dp
         },
         body1 = {
             LazyRow(

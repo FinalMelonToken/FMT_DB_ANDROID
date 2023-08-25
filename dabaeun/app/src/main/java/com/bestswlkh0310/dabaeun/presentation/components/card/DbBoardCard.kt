@@ -3,13 +3,16 @@ package com.bestswlkh0310.dabaeun.presentation.components.card
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -41,16 +44,24 @@ fun DbBoardCard(
             contentDescription = boardList.title,
             contentScale = ContentScale.Crop
         )
-        Row {
+        Row(
+            modifier = Modifier
+                .padding(vertical = 12.dp)
+                .padding(start = 4.dp)
+        ) {
             Image(
                 modifier = Modifier
-                    .size(40.dp)
+                    .size(41.dp)
                     .clip(CircleShape),
                 painter = painterResource(id = boardList.authorProfile),
                 contentDescription = ""
             )
-            Column {
+            Column(
+                modifier = Modifier
+                    .padding(start = 14.dp)
+            ) {
                 Body2(text = boardList.title)
+                Spacer(modifier = Modifier.weight(1f))
                 Label2(text = boardList.createdTime.hour.toString())
             }
         }
