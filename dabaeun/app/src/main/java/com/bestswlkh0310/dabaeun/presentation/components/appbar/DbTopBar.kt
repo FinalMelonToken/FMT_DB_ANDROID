@@ -1,5 +1,6 @@
 package com.bestswlkh0310.dabaeun.presentation.components.appbar
 
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -24,18 +25,18 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.bestswlkh0310.dabaeun.R
-import com.bestswlkh0310.dabaeun.presentation.components.basic.Surface
 import com.bestswlkh0310.dabaeun.presentation.components.button.DbIconButton
 import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTheme
-import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTypography.body1
-import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTypography.body2
 import com.bestswlkh0310.dabaeun.presentation.components.theme.Title1
 
 @Composable
 fun DbTopBar(
     modifier: Modifier = Modifier,
     enablePrimaryButton: Boolean = true,
+    enableSideBar: Boolean = false,
     primaryButtonCallback: () -> Unit = {},
+    sideBar: @Composable () -> Unit = {},
+    @DrawableRes primaryIconId: Int = R.drawable.ic_back,
     titleText: String = "",
     color: Color = DbTheme.color.White,
     yOffset: Dp = 0.dp,
@@ -47,7 +48,6 @@ fun DbTopBar(
     var barHeight by remember {
         mutableStateOf(0.dp)
     }
-
     Box(
         modifier = modifier
             .fillMaxSize()
@@ -86,7 +86,7 @@ fun DbTopBar(
                 if (enablePrimaryButton) {
                     DbIconButton(
                         modifier = Modifier,
-                        iconId = R.drawable.ic_back,
+                        iconId = primaryIconId,
                         contentDescription = "to back",
                         onClick = primaryButtonCallback
                     )
@@ -95,6 +95,10 @@ fun DbTopBar(
                 Title1(
                     text = titleText,
                 )
+                Spacer(modifier = Modifier.weight(1f))
+                if (enableSideBar)
+                    sideBar()
+                Spacer(modifier = Modifier.width(14.dp))
             }
             body1()
         }

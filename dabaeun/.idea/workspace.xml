@@ -10,12 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fec43bd-3832-4809-8eaf-13b95b5cb443" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/post/BoardContract.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/post/PostScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/post/PostViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/home/HomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/home/HomeScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/root/navigation/NavGroup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/root/navigation/NavGroup.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/appbar/DbTopBar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/appbar/DbTopBar.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/post/BoardContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/post/PostContract.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/post/PostScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/post/PostScreen.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/root/navigation/NavigationGraph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/root/navigation/NavigationGraph.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

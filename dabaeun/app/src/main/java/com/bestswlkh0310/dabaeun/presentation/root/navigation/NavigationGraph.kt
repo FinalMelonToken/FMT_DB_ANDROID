@@ -10,6 +10,7 @@ import com.bestswlkh0310.dabaeun.presentation.features.login.LoginScreen
 import com.bestswlkh0310.dabaeun.presentation.features.main.MainScreen
 import com.bestswlkh0310.dabaeun.presentation.features.my.MyScreen
 import com.bestswlkh0310.dabaeun.presentation.features.onboard.OnBoardScreen
+import com.bestswlkh0310.dabaeun.presentation.features.post.PostScreen
 import com.bestswlkh0310.dabaeun.presentation.features.quiz.QuizScreen
 
 
@@ -50,7 +51,7 @@ fun NavigationGraph(
             BoardScreen(navController = navController)
         }
         composable(NavGroup.Feature.POST.title) {
-            BoardScreen(navController = navController)
+            PostScreen(navController = navController)
         }
 
     }

@@ -14,8 +14,8 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.bestswlkh0310.dabaeun.presentation.components.appbar.DbTopBar
+import com.bestswlkh0310.dabaeun.presentation.components.button.DbLargeRoundedButton
 import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTheme
-import com.bestswlkh0310.dabaeun.presentation.features.board.BoardViewModel
 import com.bestswlkh0310.dabaeun.presentation.root.navigation.NavGroup
 
 @Composable
@@ -33,6 +33,12 @@ fun PostScreen(
         },
         heightCallBack = {
             topHeight = it
+        },
+        enableSideBar = true,
+        sideBar = {
+            DbLargeRoundedButton(text = "완료") {
+
+            }
         }
     ) {
         Column(
