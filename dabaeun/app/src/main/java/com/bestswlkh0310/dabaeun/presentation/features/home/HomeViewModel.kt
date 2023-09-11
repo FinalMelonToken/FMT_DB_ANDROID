@@ -19,4 +19,10 @@ class HomeViewModel @Inject constructor(
             state.copy(selectedCategory = it)
         }
     }
+
+    fun updateBoardRefresh(it: Boolean) = intent {
+        reduce {
+            state.copy(isBoardRefresh = it)
+        }
+    }
 }

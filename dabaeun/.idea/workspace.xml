@@ -11,12 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7fec43bd-3832-4809-8eaf-13b95b5cb443" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/data/model/BoardList.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/entity/BoardList.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/data/model/Quiz.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/entity/Quiz.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/card/DbBoardCard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/card/DbBoardCard.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/home/HomeContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/home/HomeContract.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/home/HomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/home/HomeScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/quiz/QuizScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/quiz/QuizScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/home/HomeViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/home/HomeViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

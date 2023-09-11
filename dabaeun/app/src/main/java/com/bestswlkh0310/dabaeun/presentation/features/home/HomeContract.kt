@@ -9,7 +9,8 @@ sealed class HomeCategory(val title: String) {
 
 data class HomeState(
     val isLoading: Boolean = false,
-    val selectedCategory: HomeCategory = HomeCategory.All
+    val selectedCategory: HomeCategory = HomeCategory.All,
+    val isBoardRefresh: Boolean = false
 )
 
 sealed class HomeSideEffect {

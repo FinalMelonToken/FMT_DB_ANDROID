@@ -16,7 +16,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.pullrefresh.PullRefreshIndicator
 import androidx.compose.material.pullrefresh.pullRefresh
@@ -32,10 +31,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.lerp
 import androidx.compose.ui.unit.times
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
@@ -74,9 +71,9 @@ private val boardListList = arrayListOf(
 @Composable
 fun HomeScreen(
     navController: NavController,
-    viewModel: HomeViewModel = hiltViewModel()
+    vm: HomeViewModel = hiltViewModel()
 ) {
-    val state = viewModel.container.stateFlow.collectAsState().value
+    val state = vm.container.stateFlow.collectAsState().value
     val scrollState = rememberLazyListState()
     var height by remember { mutableStateOf(0.dp) }
     var topHeight by remember { mutableStateOf(200.dp) }
@@ -91,14 +88,13 @@ fun HomeScreen(
     )
 
     val refreshScope = rememberCoroutineScope()
-    var refreshing by remember { mutableStateOf(false) }
     fun refresh() = refreshScope.launch {
-        refreshing = true
+        vm.updateBoardRefresh(true)
         delay(3000)
-        refreshing = false
+        vm.updateBoardRefresh(false)
     }
 
-    val refreshState = rememberPullRefreshState(refreshing, ::refresh)
+    val refreshState = rememberPullRefreshState(state.isBoardRefresh, ::refresh)
 
     LaunchedEffect(scrollState.firstVisibleItemScrollOffset) {
         isDownScroll = lastYPos - currentYPos < 0.dp
@@ -106,7 +102,6 @@ fun HomeScreen(
         currentYPos = scrollState.firstVisibleItemScrollOffset.dp + scrollState.firstVisibleItemIndex * height
     }
 
-    Log.d("TAG", "$refreshing - HomeScreen() called")
     DbTopBar(
         titleText = NavGroup.Main.HOME.title,
         enablePrimaryButton = false,
@@ -129,7 +124,7 @@ fun HomeScreen(
                             textColor = DbTheme.color.White,
                             type = ButtonType.Black
                         ) {
-                            viewModel.updateSelectedCategory(it)
+                            vm.updateSelectedCategory(it)
                         }
                     else
                         DbSelectButton(
@@ -137,7 +132,7 @@ fun HomeScreen(
                                 .padding(end = 8.dp),
                             text = it.title
                         ) {
-                            viewModel.updateSelectedCategory(it)
+                            vm.updateSelectedCategory(it)
                         }
                 }
             }
@@ -176,7 +171,7 @@ fun HomeScreen(
                 }
             }
             PullRefreshIndicator(
-                refreshing = refreshing,
+                refreshing = state.isBoardRefresh,
                 state = refreshState,
                 modifier = Modifier
                     .padding(top = topHeight)
