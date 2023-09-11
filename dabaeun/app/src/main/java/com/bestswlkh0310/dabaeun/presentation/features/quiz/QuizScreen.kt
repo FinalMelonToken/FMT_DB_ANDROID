@@ -4,7 +4,9 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -96,6 +98,9 @@ fun QuizScreen(
                             .padding(top = 8.dp),
                         quiz = it.quiz,
                         category = it.category)
+                }
+                item {
+                    Spacer(modifier = Modifier.height(10.dp))
                 }
             }
         }

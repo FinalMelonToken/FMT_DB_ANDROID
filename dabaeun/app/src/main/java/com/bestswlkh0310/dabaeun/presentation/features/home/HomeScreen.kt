@@ -6,8 +6,11 @@ import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -33,9 +36,11 @@ import com.bestswlkh0310.dabaeun.R
 import com.bestswlkh0310.dabaeun.data.model.BoardList
 import com.bestswlkh0310.dabaeun.presentation.components.appbar.DbTopBar
 import com.bestswlkh0310.dabaeun.presentation.components.button.ButtonType
+import com.bestswlkh0310.dabaeun.presentation.components.button.DbFloatingButton
 import com.bestswlkh0310.dabaeun.presentation.components.button.DbSelectButton
 import com.bestswlkh0310.dabaeun.presentation.components.card.DbBoardCard
 import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTheme
+import com.bestswlkh0310.dabaeun.presentation.components.theme.Label2
 import com.bestswlkh0310.dabaeun.presentation.root.navigation.NavGroup
 import com.bestswlkh0310.dabaeun.presentation.utils.toDp
 import java.time.LocalDateTime
@@ -126,34 +131,55 @@ fun HomeScreen(
             }
         }
     ) {
-        LazyColumn(
+        Box(
             modifier = Modifier
-                .background(DbTheme.color.White)
-                .padding(horizontal = 14.dp)
-            ,
-            state = scrollState
+                .fillMaxSize()
         ) {
-            item {
-                Spacer(modifier = Modifier.height(topHeight))
+            LazyColumn(
+                modifier = Modifier
+                    .background(DbTheme.color.White)
+                    .padding(horizontal = 14.dp)
+                ,
+                state = scrollState
+            ) {
+                item {
+                    Spacer(modifier = Modifier.height(topHeight))
+                }
+                items(boardListList) {
+                    DbBoardCard(
+                        modifier = Modifier
+                            .onGloballyPositioned { coordinates ->
+                                if (height == 0.dp) {
+                                    height = coordinates.size.height.dp
+                                }
+                            },
+                        boardList = it
+                    ) {
+                        navController.navigate(NavGroup.Feature.BOARD.title) {
+                            launchSingleTop = true
+                        }
+                    }
+                    Divider(
+                        color = DbTheme.color.Gray100
+                    )
+                }
             }
-            items(boardListList) {
-                DbBoardCard(
-                    modifier = Modifier
-                        .onGloballyPositioned { coordinates ->
-                            if (height == 0.dp) {
-                                height = coordinates.size.height.dp
-                            }
-                        },
-                    boardList = it
-                ) {
-                    navController.navigate(NavGroup.Feature.BOARD.title) {
-                        launchSingleTop = true
+            Column {
+                Spacer(modifier = Modifier.weight(1f))
+                Row {
+                    Spacer(modifier = Modifier.weight(1f))
+                    DbFloatingButton(
+                        modifier = Modifier
+                            .padding(end = 16.dp, bottom = 22.dp),
+                        iconId = R.drawable.ic_pencil
+                    ) {
+                        navController.navigate(NavGroup.Feature.BOARD.title) {
+                            launchSingleTop = true
+                        }
                     }
                 }
-                Divider(
-                    color = DbTheme.color.Gray100
-                )
             }
         }
+
     }
 }
