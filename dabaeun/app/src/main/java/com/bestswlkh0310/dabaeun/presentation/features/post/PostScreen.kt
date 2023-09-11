@@ -31,15 +31,11 @@ fun PostScreen(
     vm: PostViewModel = hiltViewModel()
 ) {
     val state = vm.container.stateFlow.collectAsState().value
-    var topHeight by remember { mutableStateOf(0.dp) }
 
     DbTopBar(
         titleText = NavGroup.Feature.POST.title,
         primaryButtonCallback = {
             navController.popBackStack()
-        },
-        heightCallBack = {
-            topHeight = it
         },
         enableSideBar = true,
         sideBar = {
@@ -50,7 +46,6 @@ fun PostScreen(
     ) {
         LazyColumn(
             modifier = Modifier
-                .padding(top = topHeight)
                 .fillMaxSize()
                 .background(DbTheme.color.Background)
                 .padding(horizontal = 14.dp),

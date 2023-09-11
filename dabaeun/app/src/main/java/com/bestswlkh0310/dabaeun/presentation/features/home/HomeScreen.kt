@@ -38,6 +38,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.bestswlkh0310.dabaeun.R
 import com.bestswlkh0310.dabaeun.entity.BoardList
+import com.bestswlkh0310.dabaeun.presentation.components.appbar.DbScrollTopBar
 import com.bestswlkh0310.dabaeun.presentation.components.appbar.DbTopBar
 import com.bestswlkh0310.dabaeun.presentation.components.button.ButtonType
 import com.bestswlkh0310.dabaeun.presentation.components.button.DbFloatingButton
@@ -76,11 +77,13 @@ fun HomeScreen(
     val state = vm.container.stateFlow.collectAsState().value
     val scrollState = rememberLazyListState()
     var height by remember { mutableStateOf(0.dp) }
-    var topHeight by remember { mutableStateOf(200.dp) }
+    var topHeight by remember { mutableStateOf(112.7619.dp) }
 
     var currentYPos by remember { mutableStateOf(0.dp) }
     var lastYPos by remember { mutableStateOf(0.dp) }
     var isDownScroll by remember { mutableStateOf(false) }
+
+    Log.d("TAG", "$topHeight - HomeScreen() called")
 
     val yOffset by animateDpAsState(
         targetValue = if (isDownScroll && currentYPos >= 200.dp) (-200).dp else 0.dp,
@@ -102,7 +105,7 @@ fun HomeScreen(
         currentYPos = scrollState.firstVisibleItemScrollOffset.dp + scrollState.firstVisibleItemIndex * height
     }
 
-    DbTopBar(
+    DbScrollTopBar(
         titleText = NavGroup.Main.HOME.title,
         enablePrimaryButton = false,
         yOffset = yOffset,

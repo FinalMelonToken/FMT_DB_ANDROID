@@ -46,7 +46,6 @@ fun LoginScreen(
     val allEnter = state.pw.isNotBlank() && state.email.isNotBlank()
     val keyboardShow by rememberKeyboardIsOpen()
     val height by rememberKeyboardHeight()
-    var topHeight by remember { mutableStateOf(0.dp) }
     LaunchedEffect(keyboardShow) {
         Log.d("TAG", "$height - LoginScreen() called")
         Log.d("TAG", "$keyboardShow - LoginScreen() called")
@@ -54,14 +53,8 @@ fun LoginScreen(
     DbTopBar(
         titleText = "로그인",
         enablePrimaryButton = false,
-        heightCallBack = {
-            topHeight = it
-        }
     ) {
-        Box(
-            modifier = Modifier
-                .padding(top = topHeight)
-        ) {
+        Box {
             Column(
                 modifier = Modifier
                     .fillMaxSize()

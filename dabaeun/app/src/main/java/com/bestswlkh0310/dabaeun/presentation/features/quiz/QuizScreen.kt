@@ -84,19 +84,14 @@ fun QuizScreen(
     navController: NavController,
     viewModel: QuizViewModel = hiltViewModel()
 ) {
-    var topHeight by remember { mutableStateOf(0.dp) }
     DbTopBar(
         titleText = "퀴즈",
         color = DbTheme.color.Background,
         enablePrimaryButton = false,
-        heightCallBack = {
-            topHeight = it
-        }
     ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(top = topHeight)
                 .background(DbTheme.color.Background)
         ) {
             LazyColumn(

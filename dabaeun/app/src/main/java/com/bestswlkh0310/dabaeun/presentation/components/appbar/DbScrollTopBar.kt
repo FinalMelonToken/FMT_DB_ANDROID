@@ -30,7 +30,7 @@ import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTheme
 import com.bestswlkh0310.dabaeun.presentation.components.theme.Title1
 
 @Composable
-fun DbTopBar(
+fun DbScrollTopBar(
     modifier: Modifier = Modifier,
     enablePrimaryButton: Boolean = true,
     enableSideBar: Boolean = false,
@@ -40,17 +40,40 @@ fun DbTopBar(
     titleText: String = "",
     color: Color = DbTheme.color.White,
     yOffset: Dp = 0.dp,
+    heightCallBack: (Dp) -> Unit = {},
     body1: @Composable ColumnScope.() -> Unit = {},
     body2: @Composable ColumnScope.() -> Unit,
 ) {
     val density = LocalDensity.current
+    var barHeight by remember {
+        mutableStateOf(0.dp)
+    }
     Box(
         modifier = modifier
             .fillMaxSize()
     ) {
+        Column {
+//            Surface(
+//                modifier = Modifier
+//                    .height(barHeight)
+//            ) {
+//                Spacer(
+//                    modifier = Modifier
+//                        .height(barHeight + yOffset)
+//                )
+//            }
+            body2()
+        }
+
         Column(
             modifier = Modifier
                 .offset(y = yOffset)
+                .onGloballyPositioned { coordinates ->
+                    barHeight = with(density) {
+                        coordinates.size.height.toDp()
+                    }
+                    heightCallBack(barHeight)
+                }
                 .background(color)
         ) {
             Row(
@@ -78,8 +101,6 @@ fun DbTopBar(
                 Spacer(modifier = Modifier.width(14.dp))
             }
             body1()
-            body2()
-
         }
     }
 }

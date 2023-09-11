@@ -53,7 +53,6 @@ fun NavigationGraph(
         composable(NavGroup.Feature.POST.title) {
             PostScreen(navController = navController)
         }
-
     }
 }
 

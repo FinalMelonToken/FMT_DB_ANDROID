@@ -24,20 +24,15 @@ fun BoardScreen(
     viewModel: BoardViewModel = hiltViewModel()
 ) {
     val state = viewModel.container.stateFlow.collectAsState().value
-    var topHeight by remember { mutableStateOf(200.dp) }
 
     DbTopBar(
         titleText = NavGroup.Feature.BOARD.title,
         primaryButtonCallback = {
             navController.popBackStack()
         },
-        heightCallBack = {
-             topHeight = it
-        }
     ) {
         Column(
             modifier = Modifier
-                .padding(top = topHeight)
                 .background(DbTheme.color.Background),
         ) {
 
