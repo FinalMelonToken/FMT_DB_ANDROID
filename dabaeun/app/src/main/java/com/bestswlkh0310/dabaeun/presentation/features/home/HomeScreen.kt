@@ -128,7 +128,9 @@ fun HomeScreen(
     ) {
         LazyColumn(
             modifier = Modifier
-                .background(DbTheme.color.Background),
+                .background(DbTheme.color.White)
+                .padding(horizontal = 14.dp)
+            ,
             state = scrollState
         ) {
             item {

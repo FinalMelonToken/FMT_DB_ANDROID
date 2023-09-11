@@ -18,6 +18,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
@@ -36,6 +37,7 @@ fun DbTopBar(
     enablePrimaryButton: Boolean = true,
     primaryButtonCallback: () -> Unit = {},
     titleText: String = "",
+    color: Color = DbTheme.color.White,
     yOffset: Dp = 0.dp,
     heightCallBack: (Dp) -> Unit = {},
     body1: @Composable ColumnScope.() -> Unit = {},
@@ -72,7 +74,7 @@ fun DbTopBar(
                     }
                     heightCallBack(barHeight)
                 }
-                .background(DbTheme.color.White)
+                .background(color)
         ) {
             Row(
                 modifier = Modifier

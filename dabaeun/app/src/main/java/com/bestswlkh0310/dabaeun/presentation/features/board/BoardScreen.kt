@@ -40,7 +40,7 @@ fun BoardScreen(
                 .padding(top = topHeight)
                 .background(DbTheme.color.Background),
         ) {
-            Body1(text = "board test")
+
         }
     }
 }

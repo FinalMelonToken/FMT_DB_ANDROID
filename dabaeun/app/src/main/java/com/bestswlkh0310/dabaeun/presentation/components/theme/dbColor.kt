@@ -11,10 +11,10 @@ object DbColor {
     val White = Color(0xFFFFFFFF)
     val Black = Color(0xFF000000)
 
-    val Background = Color(0xFFF4F5F9)
+    val Background = Color(0xFFECECEE)
 
     val Red = Color(0xFFEF2121)
-    val Yellow = Color(0xFFF5D00A)
+    val Yellow = Color(0xFFE8C408)
     val Blue = Color(0xFF0073C7)
 
     val Transparent = Color(0x00000000)
@@ -22,7 +22,7 @@ object DbColor {
     val MainColor = Color(0xFF00365C)
 
     val MainColor50 = Color(0xFFF8FCFF)
-    val MainColor100 = Color(0xFFC6D4DE)
+    val MainColor100 = Color(0xFFECECEE)
     val MainColor200 = Color(0xFF95ADBE)
     val MainColor300 = Color(0xFF63859D)
     val MainColor400 = Color(0xFF325E7D)
@@ -42,6 +42,12 @@ object DbColor {
     val Gray700 = Color(0xFF424245)
     val Gray800 = Color(0xFF28282A)
     val Gray900 = Color(0xFF0E0E0F)
+
+    val Android = Color(0xFF15E242)
+    val iOS = Color(0xFFF8421A)
+    val Server = Color(0xFF3972E1)
+    val Web = Color(0xFFE8C408)
+    val Game = Color(0xFFF122DC)
 
     val DisableColor = Color(0xFFF4F5F9)
 }

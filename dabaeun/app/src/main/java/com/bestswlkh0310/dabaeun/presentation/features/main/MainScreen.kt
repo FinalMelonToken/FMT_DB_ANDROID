@@ -30,7 +30,7 @@ fun MainScreen(
             })
         }
     ) {
-        Box(Modifier.padding(it)) {
+        Box(Modifier.padding(bottom = it.calculateBottomPadding())) {
             Column {
                 when (state.selectedTab) {
                     NavGroup.Main.HOME -> HomeScreen(navController = navController)

@@ -9,16 +9,19 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7fec43bd-3832-4809-8eaf-13b95b5cb443" name="Changes" comment="impl top bar">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/board/BoardContract.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/board/BoardScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/board/BoardViewModel.kt" afterDir="false" />
+    <list default="true" id="7fec43bd-3832-4809-8eaf-13b95b5cb443" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/data/model/Quiz.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/quiz/QuizItemView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/utils/Category.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/button/DbButton.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/button/DbButton.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/appbar/DbTopBar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/appbar/DbTopBar.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/card/DbBoardCard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/card/DbBoardCard.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/theme/dbColor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/theme/dbColor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/board/BoardScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/board/BoardScreen.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/home/HomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/home/HomeScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/root/navigation/NavGroup.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/root/navigation/NavGroup.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/root/navigation/NavigationGraph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/root/navigation/NavigationGraph.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/main/MainContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/main/MainContract.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/main/MainScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/main/MainScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/quiz/QuizScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/quiz/QuizScreen.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,8 +75,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin File" />
         <option value="Kotlin Class" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Data Class" />
       </list>
     </option>
   </component>
@@ -93,22 +97,22 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "/Users/dgsw8th71/Desktop/develop/FMT_DB_ANDROID/dabaeun/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/board",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.17",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "AndroidSdkUpdater",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/dgsw8th71/Desktop/develop/FMT_DB_ANDROID/dabaeun/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/board&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.17&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/board" />

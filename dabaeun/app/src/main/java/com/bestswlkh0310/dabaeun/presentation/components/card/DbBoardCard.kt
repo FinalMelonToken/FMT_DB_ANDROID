@@ -38,9 +38,7 @@ fun DbBoardCard(
             .dbClickable(
                 rippleEnable = true,
                 onClick = onClick)
-            .padding(horizontal = 14.dp)
             .padding(top = 14.dp)
-
     ) {
         val painter = painterResource(id = boardList.thumbnail)
         Image(
