@@ -12,5 +12,4 @@ class MainViewModel @Inject constructor(
 
 ) : ContainerHost<MainState, MainSideEffect>, ViewModel() {
     override val container: Container<MainState, MainSideEffect> = container(MainState())
-    
 }

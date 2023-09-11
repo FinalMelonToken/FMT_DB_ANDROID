@@ -49,6 +49,10 @@ fun NavigationGraph(
         composable(NavGroup.Feature.BOARD.title) {
             BoardScreen(navController = navController)
         }
+        composable(NavGroup.Feature.POST.title) {
+            BoardScreen(navController = navController)
+        }
+
     }
 }
 

@@ -173,13 +173,12 @@ fun HomeScreen(
                             .padding(end = 16.dp, bottom = 22.dp),
                         iconId = R.drawable.ic_pencil
                     ) {
-                        navController.navigate(NavGroup.Feature.BOARD.title) {
+                        navController.navigate(NavGroup.Feature.POST.title) {
                             launchSingleTop = true
                         }
                     }
                 }
             }
         }
-
     }
 }
