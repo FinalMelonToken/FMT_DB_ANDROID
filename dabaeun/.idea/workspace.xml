@@ -10,11 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7fec43bd-3832-4809-8eaf-13b95b5cb443" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/appbar/DbTopBar.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/appbar/DbTopBar.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/post/BoardContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/post/PostContract.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/input/DbInputArea.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/input/DbInputArea.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/theme/dbColor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/theme/dbColor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/post/PostContract.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/post/PostContract.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/post/PostScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/post/PostScreen.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/root/navigation/NavigationGraph.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/root/navigation/NavigationGraph.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/post/PostViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/post/PostViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,30 +37,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="dabaeun" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="dabaeun" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="dabaeun" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="dabaeun" type="f1a62948:ProjectNode" />
-                <item name="app" type="2d1252cf:ModuleNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="other" type="c8890929:TasksNode$1" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -74,6 +53,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/components/appbar/DbBottomNavigation.kt" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/onboard/OnBoardScreen.kt" root0="FORCE_HIGHLIGHTING" />
@@ -84,6 +66,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2UBgjgdiX2ry25liCk2YrC4P69a" />
   <component name="ProjectViewState">
     <option name="compactDirectories" value="true" />
@@ -96,14 +81,17 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "/Users/dgsw8th71/Desktop/develop/FMT_DB_ANDROID/dabaeun/app/src/main/java/com/bestswlkh0310/dabaeun/presentation/features/post",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/dgsw8th71/Desktop/develop/FMT_DB_ANDROID/dabaeun",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "AndroidSdkUpdater",
-    "show.migrate.to.gradle.popup": "false"
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -147,7 +135,7 @@
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
-      <option name="DEBUGGER_TYPE" value="Auto" />
+      <option name="DEBUGGER_TYPE" value="Java" />
       <Auto>
         <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
         <option name="SHOW_STATIC_VARS" value="true" />
@@ -204,6 +192,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1692418525199</updated>
+      <workItem from="1694409160899" duration="2000" />
     </task>
     <task id="LOCAL-00001" summary="ui setting">
       <created>1692587014552</created>

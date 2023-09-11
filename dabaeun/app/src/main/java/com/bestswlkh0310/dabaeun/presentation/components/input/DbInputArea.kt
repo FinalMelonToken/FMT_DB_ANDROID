@@ -155,7 +155,7 @@ private fun InputAreaDecoration(
                 Body1(
                     text = hint,
                     style = DbTheme.typography.body1.copy(fontWeight = FontWeight.Normal),
-                    textColor = DbTheme.color.Gray200
+                    textColor = DbTheme.color.Gray500
                 )
             }
             innerTextField()

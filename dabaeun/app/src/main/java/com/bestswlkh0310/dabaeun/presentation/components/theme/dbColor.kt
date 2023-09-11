@@ -22,7 +22,7 @@ object DbColor {
     val MainColor = Color(0xFF00365C)
 
     val MainColor50 = Color(0xFFF8FCFF)
-    val MainColor100 = Color(0xFFECECEE)
+    val MainColor100 = Color(0xFFEEEEF1)
     val MainColor200 = Color(0xFF95ADBE)
     val MainColor300 = Color(0xFF63859D)
     val MainColor400 = Color(0xFF325E7D)
