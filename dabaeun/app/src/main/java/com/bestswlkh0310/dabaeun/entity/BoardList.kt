@@ -1,4 +1,4 @@
-package com.bestswlkh0310.dabaeun.data.model
+package com.bestswlkh0310.dabaeun.entity
 
 import java.time.LocalDateTime
 

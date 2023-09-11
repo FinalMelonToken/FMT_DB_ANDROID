@@ -2,7 +2,6 @@ package com.bestswlkh0310.dabaeun.presentation.features.quiz
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,7 +9,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -20,52 +18,64 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.bestswlkh0310.dabaeun.data.model.Quiz
+import com.bestswlkh0310.dabaeun.entity.Quiz
 import com.bestswlkh0310.dabaeun.presentation.components.appbar.DbTopBar
 import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTheme
-import com.bestswlkh0310.dabaeun.presentation.components.theme.Label2
-import com.bestswlkh0310.dabaeun.presentation.root.navigation.NavGroup
 import com.bestswlkh0310.dabaeun.presentation.utils.Category
-val a = arrayListOf(Quiz(
+val a = arrayListOf(
+    Quiz(
     Category.iOS,
     "asdasd"
-),Quiz(
+),
+    Quiz(
     Category.Android,
     "asdasd"
-),Quiz(
+),
+    Quiz(
     Category.Server,
     "asdasd"
-),Quiz(
+),
+    Quiz(
     Category.Web,
     "asdasd"
-),Quiz(
+),
+    Quiz(
     Category.Web,
     "asdasd"
-),Quiz(
+),
+    Quiz(
     Category.Web,
     "asdasd"
-),Quiz(
+),
+    Quiz(
     Category.Web,
     "asdasd"
-),Quiz(
+),
+    Quiz(
     Category.Web,
     "asdasd"
-),Quiz(
+),
+    Quiz(
     Category.Web,
     "asdasd"
-),Quiz(
+),
+    Quiz(
     Category.Web,
     "asdasd"
-),Quiz(
+),
+    Quiz(
     Category.Web,
     "asdasd"
-),Quiz(
+),
+    Quiz(
     Category.Web,
     "asdasd"
-),Quiz(
+),
+    Quiz(
     Category.Web,
     "asdasd"
-),Quiz(
+),
+    Quiz(
     Category.Web,
     "asdasd"
 ),)

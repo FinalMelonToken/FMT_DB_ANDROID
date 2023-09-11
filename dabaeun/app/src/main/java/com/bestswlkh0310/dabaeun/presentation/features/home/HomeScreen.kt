@@ -3,7 +3,6 @@ package com.bestswlkh0310.dabaeun.presentation.features.home
 import android.annotation.SuppressLint
 import android.util.Log
 import androidx.compose.animation.core.animateDpAsState
-import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -17,32 +16,40 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.pullrefresh.PullRefreshIndicator
+import androidx.compose.material.pullrefresh.pullRefresh
+import androidx.compose.material.pullrefresh.rememberPullRefreshState
 import androidx.compose.material3.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
-import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.lerp
 import androidx.compose.ui.unit.times
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.bestswlkh0310.dabaeun.R
-import com.bestswlkh0310.dabaeun.data.model.BoardList
+import com.bestswlkh0310.dabaeun.entity.BoardList
 import com.bestswlkh0310.dabaeun.presentation.components.appbar.DbTopBar
 import com.bestswlkh0310.dabaeun.presentation.components.button.ButtonType
 import com.bestswlkh0310.dabaeun.presentation.components.button.DbFloatingButton
 import com.bestswlkh0310.dabaeun.presentation.components.button.DbSelectButton
 import com.bestswlkh0310.dabaeun.presentation.components.card.DbBoardCard
 import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTheme
-import com.bestswlkh0310.dabaeun.presentation.components.theme.Label2
 import com.bestswlkh0310.dabaeun.presentation.root.navigation.NavGroup
-import com.bestswlkh0310.dabaeun.presentation.utils.toDp
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.time.LocalDateTime
 
 private val categoryList = arrayListOf(
@@ -62,6 +69,7 @@ private val boardListList = arrayListOf(
     BoardList("파이썬했어요", R.drawable.ic_launcher_background, "나다", LocalDateTime.now(), R.drawable.ic_launcher_background),
 )
 
+@OptIn(ExperimentalMaterialApi::class)
 @SuppressLint("SuspiciousIndentation", "CoroutineCreationDuringComposition")
 @Composable
 fun HomeScreen(
@@ -73,21 +81,24 @@ fun HomeScreen(
     var height by remember { mutableStateOf(0.dp) }
     var topHeight by remember { mutableStateOf(200.dp) }
 
-    var currentYPos by remember {
-        mutableStateOf(0.dp)
-    }
-    var lastYPos by remember {
-        mutableStateOf(0.dp)
-    }
-    var isDownScroll by remember {
-        mutableStateOf(false)
-
-    }
+    var currentYPos by remember { mutableStateOf(0.dp) }
+    var lastYPos by remember { mutableStateOf(0.dp) }
+    var isDownScroll by remember { mutableStateOf(false) }
 
     val yOffset by animateDpAsState(
         targetValue = if (isDownScroll && currentYPos >= 200.dp) (-200).dp else 0.dp,
         animationSpec = tween(300), label = ""
     )
+
+    val refreshScope = rememberCoroutineScope()
+    var refreshing by remember { mutableStateOf(false) }
+    fun refresh() = refreshScope.launch {
+        refreshing = true
+        delay(3000)
+        refreshing = false
+    }
+
+    val refreshState = rememberPullRefreshState(refreshing, ::refresh)
 
     LaunchedEffect(scrollState.firstVisibleItemScrollOffset) {
         isDownScroll = lastYPos - currentYPos < 0.dp
@@ -95,6 +106,7 @@ fun HomeScreen(
         currentYPos = scrollState.firstVisibleItemScrollOffset.dp + scrollState.firstVisibleItemIndex * height
     }
 
+    Log.d("TAG", "$refreshing - HomeScreen() called")
     DbTopBar(
         titleText = NavGroup.Main.HOME.title,
         enablePrimaryButton = false,
@@ -134,12 +146,11 @@ fun HomeScreen(
         Box(
             modifier = Modifier
                 .fillMaxSize()
+                .pullRefresh(refreshState),
         ) {
             LazyColumn(
                 modifier = Modifier
-                    .background(DbTheme.color.White)
-                    .padding(horizontal = 14.dp)
-                ,
+                    .background(DbTheme.color.White),
                 state = scrollState
             ) {
                 item {
@@ -164,6 +175,13 @@ fun HomeScreen(
                     )
                 }
             }
+            PullRefreshIndicator(
+                refreshing = refreshing,
+                state = refreshState,
+                modifier = Modifier
+                    .padding(top = topHeight)
+                    .align(Alignment.TopCenter),
+            )
             Column {
                 Spacer(modifier = Modifier.weight(1f))
                 Row {

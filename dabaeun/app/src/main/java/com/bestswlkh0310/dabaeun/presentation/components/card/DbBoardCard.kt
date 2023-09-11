@@ -5,27 +5,21 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.bestswlkh0310.dabaeun.data.model.BoardList
+import com.bestswlkh0310.dabaeun.entity.BoardList
 import com.bestswlkh0310.dabaeun.presentation.components.modifier.dbClickable
-import com.bestswlkh0310.dabaeun.presentation.components.theme.Body1
 import com.bestswlkh0310.dabaeun.presentation.components.theme.Body2
-import com.bestswlkh0310.dabaeun.presentation.components.theme.DbShape
-import com.bestswlkh0310.dabaeun.presentation.components.theme.DbTheme
 import com.bestswlkh0310.dabaeun.presentation.components.theme.Label2
-import com.bestswlkh0310.dabaeun.presentation.components.theme.Title1
 
 @Composable
 fun DbBoardCard(
@@ -39,6 +33,7 @@ fun DbBoardCard(
                 rippleEnable = true,
                 onClick = onClick)
             .padding(top = 14.dp)
+            .padding(horizontal = 14.dp)
     ) {
         val painter = painterResource(id = boardList.thumbnail)
         Image(
