@@ -66,7 +66,7 @@ fun BoardScreen(
                     Label1(text = "안드로이드", modifier = Modifier.padding(start = 8.dp))
                 }
                 Title1(text = "Android에서 Compose를 써야하는 이유", modifier = Modifier.padding(top = 12.dp))
-                Label1(text = "박병춘 - 1992. 6. 12. 10: 12", modifier = Modifier.padding(top = 12.dp))
+                Label1(text = "박병춘 - 1992. 6. 12. 10: 12", modifier = Modifier.padding(top = 12.dp), textColor = DbTheme.color.Gray500)
             }
             Divider(
                 color = DbTheme.color.Gray100,

@@ -95,7 +95,7 @@ fun QuizScreen(
                 .background(DbTheme.color.Background)
         ) {
             LazyColumn(
-                contentPadding = PaddingValues(horizontal = 14.dp)
+                contentPadding = PaddingValues(horizontal = 8.dp)
             ) {
                 items(a) {
                     QuizItemView(
@@ -110,13 +110,4 @@ fun QuizScreen(
             }
         }
     }
-//    DbTopBar(
-//        titleText = NavGroup.Main.HOME.title,
-//        enablePrimaryButton = false,
-//        yOffset = yOffset,
-//        heightCallBack = {
-//            topHeight = it
-//        }) {
-//
-//    }
 }

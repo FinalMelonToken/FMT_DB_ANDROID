@@ -34,41 +34,28 @@ fun QuizItemView(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
+                .padding(start = 12.dp)
                 .background(DbTheme.color.Gray50)
         ) {
-            Label1(
-                modifier = Modifier
-                    .padding(
-                        start = 15.dp,
-                        top = 10.dp),
-                text = category.name,
-                textColor = category.color)
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier
-                    .padding(top = 10.dp)
+                    .padding(top = 16.dp)
             ) {
                 Surface(modifier = Modifier
-                    .padding(start = 17.dp)
                     .width(3.dp)
-                    .height(25.dp),
+                    .height(12.dp),
                     color = category.color) {
                 }
-                Body1(
-                    modifier = Modifier
-                        .padding(start = 13.dp),
-                    text = quiz
+                Label1(
+                    modifier = Modifier.padding(start = 10.dp),
+                    text = category.name,
+                    textColor = category.color
                 )
             }
-            Label2(
-                modifier = Modifier
-                    .padding(
-                        start = 10.dp,
-                        bottom = 10.dp,
-                        top = 10.dp
-                        ),
-                text = "10시간 31분 남음"
-            )
+            Body1(text = quiz)
+            Label2(modifier = Modifier.padding(bottom = 10.dp, top = 10.dp),
+                text = "10시간 31분 남음")
         }
     }
 }
