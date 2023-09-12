@@ -67,6 +67,7 @@ fun DbTopBar(
                         contentDescription = "to back",
                         onClick = primaryButtonCallback
                     )
+
                 }
                 Spacer(modifier = Modifier.width(8.dp))
                 Title1(
